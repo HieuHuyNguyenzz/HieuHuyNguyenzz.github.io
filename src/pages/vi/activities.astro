@@ -2,66 +2,89 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import awards from '../../data/awards.json';
+import activities from '../../data/activities.json';
 import vi from '../../i18n/vi.json';
 
 const t = vi;
 
-const awards = [
+const awardsVi = [
   {
+    slug: "national-scientific-research-2024",
+    title: "Giải thưởng NCKH Sinh viên cấp Quốc gia",
     prize: "Giải Ba",
     level: "Quốc gia",
-    event: "Giải thưởng NCKH Sinh viên cấp Quốc gia",
     year: "2024/2025",
     icon: "fa-medal",
+    description: "Đạt Giải Ba tại Giải thưởng NCKH Sinh viên cấp Quốc gia cho nghiên cứu về ứng dụng Deep Learning trong phân loại lưu lượng mạng mã hóa thời gian thực.",
+    details: "Nhóm nghiên cứu của chúng tôi đã phát triển một phương pháp Deep Learning mới cho việc phân loại lưu lượng mạng mã hóa theo thời gian thực. Hệ thống đạt độ chính xác cao trên nhiều giao thức và điều kiện mạng khác nhau, đóng góp vào khả năng giám sát an ninh mạng. Cuộc thi có hơn 200 bài dự thi từ các trường đại học trên cả nước."
   },
   {
+    slug: "huce-scientific-research-2024",
+    title: "Giải thưởng NCKH Sinh viên Đại học Xây dựng",
     prize: "Giải Nhất & Nhì",
     level: "Trường",
-    event: "Giải thưởng NCKH Sinh viên Đại học Xây dựng",
     year: "2024",
     icon: "fa-trophy",
+    description: "Nhận cả Giải Nhất và Giải Nhì tại Giải thưởng NCKH Sinh viên Đại học Xây dựng cho các đóng góp nghiên cứu xuất sắc trong lĩnh vực AI và an ninh mạng.",
+    details: "Được ghi nhận cho nhiều dự án nghiên cứu trong năm học. Giải Nhất cho công trình về tối ưu Federated Learning, Giải Nhì cho đóng góp trong phân loại lưu lượng mạng sử dụng Transfer Learning. Sự ghi nhận kép này thể hiện chiều rộng và chiều sâu trong năng lực nghiên cứu."
   },
   {
+    slug: "olympiad-it-32nd",
+    title: "Olympic Tin học Sinh viên Việt Nam lần thứ 32",
     prize: "Giải Ba (Hạng 50)",
     level: "Quốc gia",
-    event: "Olympic Tin học Sinh viên Việt Nam lần thứ 32",
     year: "2023",
     icon: "fa-code",
+    description: "Đạt Giải Ba (Hạng 50) trong số hàng trăm sinh viên IT tài năng từ khắp Việt Nam tại kỳ thi Olympic Tin học Sinh viên lần thứ 32.",
+    details: "Tham gia thi đấu về giải thuật, cấu trúc dữ liệu và lập trình thi đấu với các sinh viên IT hàng đầu từ các trường đại học trên cả nước. Cuộc thi kiểm tra kỹ năng lập trình thi đấu, thiết kế giải thuật và tối ưu hóa dưới áp lực thời gian. Kết quả này đưa tôi vào nhóm những thí sinh xuất sắc nhất cả nước."
   },
   {
+    slug: "huce-olympiad-it-2023",
+    title: "Olympic Tin học Sinh viên Đại học Xây dựng",
     prize: "Giải Nhất",
     level: "Trường",
-    event: "Olympic Tin học Sinh viên Đại học Xây dựng",
     year: "2023",
     icon: "fa-laptop-code",
+    description: "Đoạt Giải Nhất tại Olympic Tin học Sinh viên Đại học Xây dựng, thể hiện kỹ năng lập trình và giải thuật vững vàng.",
+    details: "Giành vị trí cao nhất tại Olympic Tin học cấp trường, cạnh tranh với các sinh viên CNTT cùng trường trong các bài toán giải thuật và lập trình thi đấu. Cuộc thi bao gồm các chủ đề như thuật toán đồ thị, quy hoạch động và tối ưu cấu trúc dữ liệu."
   },
   {
+    slug: "olympiad-it-31st",
+    title: "Olympic Tin học Sinh viên Việt Nam lần thứ 31",
     prize: "Giải Khuyến khích (Hạng 75)",
     level: "Quốc gia",
-    event: "Olympic Tin học Sinh viên Việt Nam lần thứ 31",
     year: "2022",
     icon: "fa-code",
-  },
+    description: "Đạt Giải Khuyến khích (Hạng 75) tại kỳ thi Olympic Tin học Sinh viên Việt Nam lần thứ 31, đánh dấu lần đầu tham gia cuộc thi cấp quốc gia.",
+    details: "Đây là lần đầu tiên tôi tham gia cuộc thi Olympic Tin học Sinh viên Việt Nam ở cấp độ quốc gia. Cuộc thi mang lại trải nghiệm quý báu với các bài toán giải thuật nâng cao và giúp xác định những lĩnh vực cần cải thiện. Trải nghiệm này là nền tảng cho kết quả tốt hơn trong những năm sau."
+  }
 ];
 
-const activities = [
+const activitiesVi = [
   {
+    slug: "sakura-science-club",
+    title: "Sakura Science Club (Nhật Bản)",
     role: "Thành viên",
-    org: "Sakura Science Club (Nhật Bản)",
     period: "2018 – Nay",
-    desc: "Thành viên tích cực của câu lạc bộ khoa học quốc tế, thúc đẩy giao lưu văn hóa và khoa học giữa Việt Nam và Nhật Bản.",
+    icon: "fa-globe-asia",
+    description: "Thành viên tích cực của câu lạc bộ khoa học quốc tế, thúc đẩy giao lưu văn hóa và khoa học giữa Việt Nam và Nhật Bản.",
+    details: "Là thành viên lâu năm của Sakura Science Club, tôi đã tham gia nhiều chương trình giao lưu văn hóa, hội thảo khoa học và các dự án hợp tác giữa sinh viên Việt Nam và Nhật Bản. Câu lạc bộ tập trung vào việc thúc đẩy quan hệ quốc tế, chia sẻ kiến thức trong lĩnh vực STEM và tăng cường hiểu biết giữa hai nền văn hóa. Qua hoạt động này, tôi đã phát triển kỹ năng giao tiếp đa văn hóa và tiếp xúc với hệ sinh thái nghiên cứu tiên tiến của Nhật Bản."
   },
   {
+    slug: "soict-summer-school",
+    title: "SOICT Summer School in Generative AI",
     role: "Học viên",
-    org: "SOICT Summer School in Generative AI",
     period: "Tháng 8/2024",
-    desc: "Chương trình chuyên sâu 5 ngày về Generative AI, bao gồm các tiến bộ mới nhất về LLMs, diffusion models và ứng dụng.",
-  },
+    icon: "fa-robot",
+    description: "Chương trình chuyên sâu 5 ngày về Generative AI, bao gồm các tiến bộ mới nhất về LLMs, diffusion models và ứng dụng.",
+    details: "Tham gia chương trình hè chuyên sâu 5 ngày do SOICT tổ chức. Chương trình bao gồm các chủ đề tiên tiến trong Generative AI như Large Language Models (LLMs), diffusion models, kiến trúc transformer và ứng dụng thực tiễn trong nghiên cứu và công nghiệp. Các phiên thực hành bao gồm fine-tuning mô hình pre-trained, prompt engineering và xây dựng ứng dụng AI. Trải nghiệm này giúp tôi hiểu sâu hơn về Generative AI và tiềm năng ứng dụng trong an ninh mạng."
+  }
 ];
 ---
 
 <BaseLayout title={`${t.activities.pageTitle} | Nguyễn Huy Hiệu`}>
-  <Header currentPage="about" lang="vi" t={t} />
+  <Header currentPage="activities" lang="vi" t={t} />
   <main class="pt-20">
     <section class="py-24 relative">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent-700/8 via-accent-900/3 to-transparent"></div>
@@ -88,7 +111,7 @@ const activities = [
             <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-500/40 via-accent-700/20 to-transparent"></div>
 
             <div class="space-y-6">
-              {awards.map((a) => (
+              {awardsVi.map((a) => (
                 <div class="relative flex gap-6 group">
                   <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-card border-2 border-accent-500/40 flex items-center justify-center z-10 group-hover:border-accent-400 group-hover:shadow-lg group-hover:shadow-accent-500/20 transition-all duration-300">
                     <i class={`fas ${a.icon} text-accent-400 text-xs`}></i>
@@ -97,7 +120,7 @@ const activities = [
                   <div class="flex-1 bg-dark-card border border-dark-border rounded-xl p-5 hover:border-accent-500/30 transition-all duration-300 group-hover:-translate-y-0.5">
                     <div class="flex items-start justify-between gap-3 mb-2">
                       <div>
-                        <h3 class="text-accent-200 font-semibold">{a.event}</h3>
+                        <h3 class="text-accent-200 font-semibold">{a.title}</h3>
                         <p class="text-accent-400 text-sm mt-1">{a.prize}</p>
                       </div>
                       <div class="flex flex-col items-end gap-1">
@@ -105,6 +128,12 @@ const activities = [
                         <span class="px-2 py-0.5 text-xs rounded-full bg-accent-900/40 text-accent-300/50 border border-accent-700/20">{a.level}</span>
                       </div>
                     </div>
+                    <p class="text-accent-300/50 text-sm leading-relaxed mt-2">
+                      {a.description}
+                    </p>
+                    <a href={`/vi/activities/award/${a.slug}`} class="inline-flex items-center gap-2 text-sm text-accent-400 hover:text-accent-300 transition-colors mt-3">
+                      {t.common.viewDetails} <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -121,23 +150,26 @@ const activities = [
             <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-400/40 via-accent-700/20 to-transparent"></div>
 
             <div class="space-y-6">
-              {activities.map((a) => (
+              {activitiesVi.map((a) => (
                 <div class="relative flex gap-6 group">
                   <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-card border-2 border-accent-400/40 flex items-center justify-center z-10 group-hover:border-accent-300 group-hover:shadow-lg group-hover:shadow-accent-400/20 transition-all duration-300">
-                    <i class="fas fa-circle text-accent-400 text-[6px]"></i>
+                    <i class={`fas ${a.icon} text-accent-400 text-xs`}></i>
                   </div>
 
                   <div class="flex-1 bg-dark-card border border-dark-border rounded-xl p-5 hover:border-accent-400/30 transition-all duration-300 group-hover:-translate-y-0.5">
                     <div class="flex items-start justify-between gap-3 mb-2">
                       <div>
-                        <h3 class="text-accent-200 font-semibold">{a.org}</h3>
+                        <h3 class="text-accent-200 font-semibold">{a.title}</h3>
                         <p class="text-accent-400 text-sm">{a.role}</p>
                       </div>
                       <span class="text-accent-300/30 text-xs whitespace-nowrap">{a.period}</span>
                     </div>
                     <p class="text-accent-300/50 text-sm leading-relaxed mt-2">
-                      {a.desc}
+                      {a.description}
                     </p>
+                    <a href={`/vi/activities/activity/${a.slug}`} class="inline-flex items-center gap-2 text-sm text-accent-400 hover:text-accent-300 transition-colors mt-3">
+                      {t.common.viewDetails} <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </a>
                   </div>
                 </div>
               ))}
