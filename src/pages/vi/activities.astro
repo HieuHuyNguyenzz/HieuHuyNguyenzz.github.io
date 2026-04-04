@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import vi from '../../i18n/vi.json';
+
+const t = vi;
+
+const awards = [
+  { prize: "Giải Nhất & Nhì", event: "Giải thưởng NCKH Sinh viên Đại học Xây dựng", year: "2024" },
+  { prize: "Giải Nhất", event: "Olympic Tin học Sinh viên Đại học Xây dựng", year: "2023" },
+  { prize: "Giải Ba (Hạng 50)", event: "Kỳ thi Olympic Tin học Sinh viên Việt Nam lần thứ 32", year: "2023" },
+  { prize: "Giải Ba", event: "Giải thưởng NCKH Sinh viên cấp Quốc gia", year: "2024/2025" },
+  { prize: "Giải Khuyến khích (Hạng 75)", event: "Kỳ thi Olympic Tin học Sinh viên Việt Nam lần thứ 31", year: "2022" },
+];
+
+const activities = [
+  { role: "Thành viên", org: "Sakura Science Club (Nhật Bản)", period: "2018 – Nay" },
+  { role: "Học viên", org: "SOICT Summer School in Generative AI", period: "19/8/2024 – 23/8/2024" },
+];
+---
+
+<BaseLayout title={`${t.activities.pageTitle} | Nguyễn Huy Hiệu`}>
+  <Header currentPage="about" lang="vi" t={t} />
+  <main class="pt-20">
+    <section class="py-24 relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent-700/8 via-accent-900/3 to-transparent"></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-900/50 border border-accent-700/30 mb-4">
+            <span class="text-accent-400 text-sm font-medium">{t.activities.pageSubtitle}</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold">
+            {t.activities.pageTitle}
+          </h1>
+          <p class="text-accent-300/50 mt-4 max-w-lg mx-auto">
+            {t.activities.pageDesc}
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+              <i class="fas fa-trophy text-accent-400"></i> {t.activities.sections.awards}
+            </h2>
+            <div class="space-y-4">
+              {awards.map((a, i) => (
+                <div class:list={["flex flex-col md:flex-row md:items-center gap-2 md:gap-4", i < awards.length - 1 ? "pb-4 border-b border-dark-border" : ""]}>
+                  <div class="flex-shrink-0 w-40">
+                    <span class="text-accent-400 text-sm font-medium">{a.prize}</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-accent-300/70 text-sm">{a.event}</p>
+                  </div>
+                  <span class="text-accent-300/30 text-sm whitespace-nowrap">{a.year}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+              <i class="fas fa-users text-accent-400"></i> {t.activities.sections.activities}
+            </h2>
+            <div class="space-y-4">
+              {activities.map((a, i) => (
+                <div class:list={["flex flex-col md:flex-row md:items-center gap-2 md:gap-4", i < activities.length - 1 ? "pb-4 border-b border-dark-border" : ""]}>
+                  <div class="flex-shrink-0 w-40">
+                    <span class="text-accent-400 text-sm font-medium">{a.role}</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-accent-300/70 text-sm">{a.org}</p>
+                  </div>
+                  <span class="text-accent-300/30 text-sm whitespace-nowrap">{a.period}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

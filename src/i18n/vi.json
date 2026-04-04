@@ -7,13 +7,16 @@
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "research": "Nghiên cứu",
+    "projects": "Dự án",
     "contact": "Liên hệ"
   },
   "common": {
     "openToOpportunities": "Sẵn sàng cơ hội mới",
     "viewMyResearch": "Xem Nghiên cứu",
+    "viewMyProjects": "Xem Dự án",
     "viewDetails": "Xem chi tiết",
     "backToResearch": "Quay lại Nghiên cứu",
+    "backToProjects": "Quay lại Dự án",
     "viewPdf": "Xem PDF",
     "viewCode": "Xem Code",
     "sourceCode": "Mã nguồn",
@@ -29,7 +32,8 @@
     },
     "aboutMe": "Giới thiệu",
     "backgroundSkills": "Nền tảng, kỹ năng & kinh nghiệm",
-    "academicPubs": "Công bố học thuật & bài báo"
+    "academicPubs": "Công bố học thuật & bài báo",
+    "personalWork": "Dự án cá nhân & mã nguồn mở"
   },
   "home": {
     "greeting": "Xin chào, tôi là",
@@ -90,6 +94,27 @@
       "frameworks": "Thư viện & Framework",
       "tools": "Kỹ năng khác",
       "certificates": "Chứng chỉ"
+    }
+  },
+  "activities": {
+    "pageTitle": "Hoạt động & Giải thưởng",
+    "pageSubtitle": "Bên cạnh Nghiên cứu",
+    "pageDesc": "Các cuộc thi, giải thưởng và hoạt động ngoại khóa.",
+    "sections": {
+      "awards": "Giải thưởng & Cuộc thi",
+      "activities": "Hoạt động"
+    }
+  },
+  "projects": {
+    "pageTitle": "Dự án",
+    "pageSubtitle": "Sản phẩm",
+    "pageDesc": "Dự án cá nhân, đóng góp mã nguồn mở và những sản phẩm tôi đã xây dựng.",
+    "sections": {
+      "problem": "Vấn đề",
+      "solution": "Giải pháp",
+      "techStack": "Công nghệ",
+      "results": "Kết quả đo được",
+      "screenshots": "Ảnh chụp màn hình"
     }
   },
   "research": {

@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import projects from '../../data/projects.json';
+import en from '../../i18n/en.json';
+
+export function getStaticPaths() {
+  return projects.map(p => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const t = en;
+
+const statusLabels: Record<string, string> = {
+  completed: t.common.completed,
+  'in-progress': t.common.inProgress,
+  planned: t.common.planned,
+};
+const statusColors: Record<string, string> = {
+  completed: 'bg-accent-400/20 text-accent-400 border-accent-400/30',
+  'in-progress': 'bg-accent-500/20 text-accent-500 border-accent-500/30',
+  planned: 'bg-accent-700/20 text-accent-700 border-accent-700/30',
+};
+---
+
+<BaseLayout title={`${project.title} | Huy Hieu Nguyen`}>
+  <Header currentPage="projects" lang="en" t={t} />
+  <main class="pt-20">
+    <section class="py-24 relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-500/8 via-accent-900/3 to-transparent"></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <a href="/projects" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors mb-8 text-sm">
+          <i class="fas fa-arrow-left text-xs"></i> {t.common.backToProjects}
+        </a>
+
+        <div class="bg-dark-card border border-dark-border rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-400/60 via-accent-500/40 to-transparent"></div>
+
+          <div class="flex items-center gap-3 mb-4">
+            <span class={`px-3 py-1 text-xs rounded-full border ${statusColors[project.status] || statusColors.planned}`}>
+              {statusLabels[project.status] || statusLabels.planned}
+            </span>
+            <span class="text-accent-300/40 text-sm">{project.date}</span>
+          </div>
+
+          <h1 class="text-2xl md:text-3xl font-bold text-accent-200 mb-6">
+            {project.title}
+          </h1>
+
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+              <i class="fas fa-bullseye text-accent-400 text-sm"></i> {t.projects.sections.problem}
+            </h2>
+            <p class="text-accent-300/60 leading-relaxed">
+              {project.problem}
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+              <i class="fas fa-lightbulb text-accent-400 text-sm"></i> {t.projects.sections.solution}
+            </h2>
+            <p class="text-accent-300/60 leading-relaxed">
+              {project.solution}
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+              <i class="fas fa-layer-group text-accent-400 text-sm"></i> {t.projects.sections.techStack}
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              {project.techStack.map(tech => (
+                <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {project.screenshots.length > 0 && (
+            <div class="mb-8">
+              <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+                <i class="fas fa-images text-accent-400 text-sm"></i> {t.projects.sections.screenshots}
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.screenshots.map((src) => (
+                  <div class="rounded-lg overflow-hidden border border-dark-border">
+                    <img src={src} alt={project.title} class="w-full h-48 object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+              <i class="fas fa-chart-line text-accent-400 text-sm"></i> {t.projects.sections.results}
+            </h2>
+            <ul class="space-y-3">
+              {project.results.map(result => (
+                <li class="flex items-start gap-3 text-accent-300/60">
+                  <i class="fas fa-arrow-trend-up text-accent-400 text-xs mt-1.5 flex-shrink-0"></i>
+                  <span class="text-sm leading-relaxed">{result}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-6 border-t border-dark-border">
+            {project.githubLink && project.githubLink !== '#' && (
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-900/60 border border-accent-700/30 text-accent-400 hover:border-accent-500/50 hover:text-accent-300 transition-all duration-300 text-sm">
+                <i class="fab fa-github"></i> {t.common.sourceCode}
+              </a>
+            )}
+            {project.demoLink && project.demoLink !== '#' && (
+              <a href={project.demoLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-900/60 border border-accent-700/30 text-accent-400 hover:border-accent-500/50 hover:text-accent-300 transition-all duration-300 text-sm">
+                <i class="fas fa-external-link-alt"></i> {t.common.liveDemo}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

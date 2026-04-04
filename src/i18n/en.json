@@ -7,13 +7,16 @@
     "home": "Home",
     "about": "About",
     "research": "Research",
+    "projects": "Projects",
     "contact": "Contact"
   },
   "common": {
     "openToOpportunities": "Open to opportunities",
     "viewMyResearch": "View My Research",
+    "viewMyProjects": "View My Projects",
     "viewDetails": "View Details",
     "backToResearch": "Back to Research",
+    "backToProjects": "Back to Projects",
     "viewPdf": "View PDF",
     "viewCode": "View Code",
     "sourceCode": "Source Code",
@@ -21,6 +24,8 @@
     "published": "published",
     "underReview": "under review",
     "inProgress": "in progress",
+    "completed": "completed",
+    "planned": "planned",
     "firstAuthor": "First Author",
     "researchSections": {
       "published": "Published Papers",
@@ -29,7 +34,8 @@
     },
     "aboutMe": "About Me",
     "backgroundSkills": "Background, skills & experience",
-    "academicPubs": "Academic publications & papers"
+    "academicPubs": "Academic publications & papers",
+    "personalWork": "Personal & open-source work"
   },
   "home": {
     "greeting": "Hi, I'm",
@@ -90,6 +96,27 @@
       "frameworks": "Libraries & Frameworks",
       "tools": "Other Skills",
       "certificates": "Certificates"
+    }
+  },
+  "activities": {
+    "pageTitle": "Activities & Awards",
+    "pageSubtitle": "Beyond Research",
+    "pageDesc": "Competitions, awards, and extracurricular involvements.",
+    "sections": {
+      "awards": "Competitions & Awards",
+      "activities": "Activities"
+    }
+  },
+  "projects": {
+    "pageTitle": "Projects",
+    "pageSubtitle": "What I Build",
+    "pageDesc": "Side projects, open-source contributions, and things I've built for fun.",
+    "sections": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "techStack": "Tech Stack",
+      "results": "Measured Results",
+      "screenshots": "Screenshots"
     }
   },
   "research": {

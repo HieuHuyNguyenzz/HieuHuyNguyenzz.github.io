@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "project-1",
+    "title": "Project Name 1",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses.",
+    "solution": "Explain your approach and architecture decisions.",
+    "techStack": ["Python", "TensorFlow", "React"],
+    "results": [
+      "Achieved 95% accuracy on test dataset",
+      "Reduced processing time by 40% compared to baseline",
+      "Deployed and serving 100+ requests per day"
+    ],
+    "screenshots": [],
+    "githubLink": "#",
+    "demoLink": "#",
+    "date": "2024-06",
+    "status": "completed"
+  },
+  {
+    "slug": "project-2",
+    "title": "Project Name 2",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses.",
+    "solution": "Explain your approach and architecture decisions.",
+    "techStack": ["Node.js", "Docker", "PostgreSQL"],
+    "results": [
+      "Handled 1000+ concurrent users",
+      "99.9% uptime over 6 months",
+      "Reduced API response time to under 200ms"
+    ],
+    "screenshots": [],
+    "githubLink": "#",
+    "demoLink": "#",
+    "date": "2024-03",
+    "status": "completed"
+  },
+  {
+    "slug": "project-3",
+    "title": "Project Name 3",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses.",
+    "solution": "Explain your approach and architecture decisions.",
+    "techStack": ["TypeScript", "Next.js", "Tailwind"],
+    "results": [
+      "Lighthouse performance score: 98/100",
+      "First contentful paint under 1s",
+      "SEO ranking improved by 60%"
+    ],
+    "screenshots": [],
+    "githubLink": "#",
+    "demoLink": "#",
+    "date": "2024-01",
+    "status": "completed"
+  },
+  {
+    "slug": "project-4",
+    "title": "Project Name 4",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses.",
+    "solution": "Explain your approach and architecture decisions.",
+    "techStack": ["Python", "FastAPI", "MongoDB"],
+    "results": [
+      "Processed 10K+ records per batch",
+      "Automated workflow saving 5 hours/week",
+      "Integrated with 3 external APIs"
+    ],
+    "screenshots": [],
+    "githubLink": "#",
+    "demoLink": "#",
+    "date": "2023-11",
+    "status": "in-progress"
+  },
+  {
+    "slug": "project-5",
+    "title": "Project Name 5",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses.",
+    "solution": "Explain your approach and architecture decisions.",
+    "techStack": ["Rust", "WebAssembly", "React"],
+    "results": [
+      "10x faster than JavaScript equivalent",
+      "Bundle size reduced by 70%",
+      "Zero runtime errors in production"
+    ],
+    "screenshots": [],
+    "githubLink": "#",
+    "demoLink": "#",
+    "date": "2025-01",
+    "status": "planned"
+  }
+]
