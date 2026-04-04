@@ -6,6 +6,7 @@
   "nav": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
+    "blog": "Blog",
     "research": "Nghiên cứu",
     "projects": "Dự án",
     "activities": "Hoạt động",
@@ -50,7 +51,11 @@
     "pageSubtitle": "Về tôi",
     "introduction": {
       "title": "Giới thiệu",
-      "text": "Tôi là Kỹ sư AI tại Viettel Cyber Security và Trợ lý Nghiên cứu tại AINI (AI Network Innovation) Labs, Đại học Bách Khoa Hà Nội. Nghiên cứu của tôi tập trung vào Federated Learning, Deep Learning cho phân loại lưu lượng mạng và hệ thống AI dựa trên LLM. Tôi đam mê kết nối giữa nghiên cứu học thuật và ứng dụng thực tiễn trong an ninh mạng và AI."
+      "text": "Chào, tôi là Nguyễn Huy Hiệu, Kỹ sư AI tại Viettel Cyber Security và Trợ lý Nghiên cứu tại AINI Lab thuộc BK Cyber Security Center (Trường CNTT&TT - ĐHBK Hà Nội). Tôi hiện đang sinh sống và làm việc tại Hà Nội, Việt Nam.\n\nCông việc hiện tại của tôi tập trung vào Federated Learning và Deep Learning cho các hệ thống Edge AI. Tuy nhiên, tôi đặc biệt quan tâm đến lý thuyết Machine Learning và Deep Learning nói chung.\n\nTôi tốt nghiệp đại học năm 2025 với bằng Cử nhân ngành Khoa học Máy tính. Mục tiêu của tôi là tiếp tục học tập và theo đuổi bằng Thạc sĩ, Tiến sĩ trong lĩnh vực Trí tuệ Nhân tạo."
+    },
+    "beyondWork": {
+      "title": "Ngoài công việc",
+      "text": "Tôi thích đọc sách về khoa học và công nghệ, đặc biệt là các lĩnh vực liên quan đến Trí tuệ Nhân tạo. Ngoài ra, tôi cũng yêu thích âm nhạc, chơi guitar trong thời gian rảnh. Tôi tin rằng việc cân bằng giữa công việc và cuộc sống giúp tôi duy trì sự sáng tạo và hiệu quả trong công việc."
     },
     "education": {
       "title": "Học vấn",
@@ -58,25 +63,19 @@
         {
           "period": "2020 – 2025",
           "degree": "Cử nhân Khoa học Máy tính (GPA: 3.2)",
-          "institution": "Trường Đại học Xây dựng Hà Nội (Top 7 trường Kỹ thuật tại Việt Nam)",
+          "institution": "Trường Đại học Xây dựng Hà Nội",
           "desc": ""
         },
         {
           "period": "2017 – 2020",
           "degree": "THPT Chuyên Toán",
-          "institution": "Trường THPT Chuyên Đại học Khoa học Tự nhiên (HUS)",
+          "institution": "Trường THPT Chuyên Khoa học Tự nhiên (HUS)",
           "desc": ""
         },
         {
           "period": "2013 – 2017",
           "degree": "Trung học Cơ sở",
           "institution": "Trường THCS Nguyễn Trường Tộ, Hà Nội",
-          "desc": ""
-        },
-        {
-          "period": "2008 – 2013",
-          "degree": "Tiểu học",
-          "institution": "Trường Tiểu học Cát Linh, Hà Nội",
           "desc": ""
         }
       ]
@@ -88,28 +87,47 @@
           "period": "10/2025 – Nay",
           "role": "Kỹ sư AI",
           "company": "Viettel Cyber Security (VCS), Tập đoàn Viettel",
-          "desc": "Xây dựng quy trình AI và Chatbot sử dụng nền tảng Dify.AI. Phát triển MCP server để kết nối mô hình LLM với tri thức công ty."
+          "desc": [
+            "Xây dựng quy trình AI và Chatbot sử dụng nền tảng Dify.AI",
+            "Phát triển MCP server để kết nối mô hình LLM với tri thức công ty"
+          ]
         },
         {
           "period": "4/2023 – Nay",
           "role": "Trợ lý Nghiên cứu",
           "company": "AINI Labs, Đại học Bách Khoa Hà Nội",
-          "desc": "Ứng dụng kỹ thuật Deep Learning cho phân loại lưu lượng mạng mã hóa thời gian thực. Nghiên cứu Federated Learning tập trung vào dữ liệu Non-IID, hiệu ứng straggler và bảo vệ quyền riêng tư."
+          "desc": [
+            "Ứng dụng kỹ thuật Deep Learning cho phân loại lưu lượng mạng mã hóa thời gian thực",
+            "Nghiên cứu Federated Learning tập trung vào dữ liệu Non-IID",
+            "Nghiên cứu hiệu ứng straggler và bảo vệ quyền riêng tư"
+          ]
         },
         {
           "period": "6/2024 – 12/2024",
           "role": "Thực tập sinh",
-          "company": "Trung tâm CNTT & CSDL, Đại học Xây dựng Hà Nội",
-          "desc": "Nghiên cứu các vấn đề về hệ thống mạng. Triển khai hệ thống e-learning cho nhà trường."
+          "company": "Trung tâm CNTT & CSDL, Đại học Xây dựng",
+          "desc": [
+            "Nghiên cứu các vấn đề về hệ thống mạng",
+            "Triển khai hệ thống e-learning cho nhà trường"
+          ]
+        },
+        {
+          "period": "8/2022 – 3/2023",
+          "role": "Thực tập sinh Phân tích Dữ liệu",
+          "company": "I3Network",
+          "desc": [
+            "Học cách sử dụng công cụ phân tích như Tableau, Zoho Analytics",
+            "Tìm hiểu về lĩnh vực Business Intelligence (BI)"
+          ]
         }
       ]
     },
     "skills": {
-      "title": "Kỹ năng & Chứng chỉ",
+      "title": "Kỹ năng & Ngoại ngữ",
       "programming": "Ngôn ngữ lập trình",
       "frameworks": "Thư viện & Framework",
-      "tools": "Kỹ năng khác",
-      "certificates": "Chứng chỉ",
+      "tools": "Kỹ năng",
+      "languages": "Ngoại ngữ",
       "toolsList": [
         "Cấu trúc dữ liệu & Giải thuật",
         "Machine Learning",
@@ -117,7 +135,7 @@
         "Data Science"
       ],
       "certificatesList": [
-        "IELTS 7.0"
+        "Tiếng Anh - IELTS 7.0 (B2 - Upper Intermediate)"
       ]
     }
   },
@@ -141,6 +159,10 @@
       "results": "Kết quả đo được",
       "screenshots": "Ảnh chụp màn hình"
     }
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "pageSubtitle": "Ghi chép & Chia sẻ"
   },
   "research": {
     "pageTitle": "Nghiên cứu",

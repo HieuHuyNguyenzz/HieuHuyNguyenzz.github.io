@@ -6,6 +6,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "blog": "Blog",
     "research": "Research",
     "projects": "Projects",
     "activities": "Activities",
@@ -50,7 +51,11 @@
     "pageSubtitle": "Who I Am",
     "introduction": {
       "title": "Introduction",
-      "text": "I am an AI Engineer at Viettel Cyber Security and a Research Assistant at AINI (AI Network Innovation) Labs, Hanoi University of Science and Technology. My research focuses on federated learning, deep learning for network traffic classification, and LLM-based AI systems. I am passionate about bridging the gap between academic research and real-world applications in cybersecurity and AI."
+      "text": "Hi, I'm Huy Hieu Nguyen, an AI Engineer at Viettel Cyber Security and a Research Assistant at AINI Lab of BK Cyber Security Center (SOICT - HUST). I am based in Hanoi, Vietnam.\n\nMy current work focuses on federated learning and deep learning for Edge AI systems. However, I am particularly interested in machine learning and deep learning theory in general.\n\nI graduated from university in 2025 with a Bachelor's degree in Computer Science. My goal is to continue studying and pursue a Master's and PhD degree in the field of Artificial Intelligence."
+    },
+    "beyondWork": {
+      "title": "Beyond Work",
+      "text": "I enjoy reading books about science and technology, especially topics related to Artificial Intelligence. I also love music and play guitar in my free time. I believe that balancing work and life helps me stay creative and productive."
     },
     "education": {
       "title": "Education",
@@ -58,7 +63,7 @@
         {
           "period": "2020 – 2025",
           "degree": "Bachelor of Computer Science (GPA: 3.2)",
-          "institution": "Hanoi University of Civil Engineering (Top 7 Engineering Universities in Vietnam)",
+          "institution": "Hanoi University of Civil Engineering",
           "desc": ""
         },
         {
@@ -72,12 +77,6 @@
           "degree": "Middle School",
           "institution": "Nguyen Truong To Secondary School, Hanoi",
           "desc": ""
-        },
-        {
-          "period": "2008 – 2013",
-          "degree": "Elementary School",
-          "institution": "Cat Linh Primary School, Hanoi",
-          "desc": ""
         }
       ]
     },
@@ -88,28 +87,47 @@
           "period": "10/2025 – Present",
           "role": "AI Engineer",
           "company": "Viettel Cyber Security (VCS), Viettel Group",
-          "desc": "Building AI workflow and Chatbot using Dify.AI platform. Developing MCP servers to connect LLM models with company knowledge."
+          "desc": [
+            "Building AI workflow and Chatbot using Dify.AI platform",
+            "Developing MCP servers to connect LLM models with company knowledge"
+          ]
         },
         {
           "period": "4/2023 – Present",
           "role": "Research Assistant",
           "company": "AINI Labs, Hanoi University of Science and Technology",
-          "desc": "Applying Deep Learning techniques for real-time encrypted network traffic classification. Federated Learning research focusing on Non-IID data, straggler effect, and privacy preservation."
+          "desc": [
+            "Applying Deep Learning techniques for real-time encrypted network traffic classification",
+            "Federated Learning research focusing on Non-IID data",
+            "Research on straggler effect and privacy preservation"
+          ]
         },
         {
           "period": "6/2024 – 12/2024",
           "role": "Intern",
           "company": "IT & Database Center, Hanoi University of Civil Engineering",
-          "desc": "Research on network system problems. Deploying e-learning system for the university."
+          "desc": [
+            "Research on network system problems",
+            "Deploying e-learning system for the university"
+          ]
+        },
+        {
+          "period": "8/2022 – 3/2023",
+          "role": "Data Analyst Intern",
+          "company": "I3Network",
+          "desc": [
+            "Learned to use analytics tools such as Tableau, Zoho Analytics",
+            "Explored Business Intelligence (BI) field"
+          ]
         }
       ]
     },
     "skills": {
-      "title": "Skills & Certificates",
+      "title": "Skills & Languages",
       "programming": "Programming Languages",
       "frameworks": "Libraries & Frameworks",
-      "tools": "Other Skills",
-      "certificates": "Certificates",
+      "tools": "Skills",
+      "languages": "Languages",
       "toolsList": [
         "Data Structures and Algorithms",
         "Machine Learning",
@@ -117,7 +135,7 @@
         "Data Science"
       ],
       "certificatesList": [
-        "IELTS 7.0"
+        "English - IELTS 7.0 (B2 - Upper Intermediate)"
       ]
     }
   },
@@ -141,6 +159,10 @@
       "results": "Measured Results",
       "screenshots": "Screenshots"
     }
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "pageSubtitle": "Notes & Sharing"
   },
   "research": {
     "pageTitle": "Research",

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import vi from '../../../i18n/vi.json';
+
+const t = vi as any;
+---
+
+<BaseLayout title={`${t.blog.pageTitle} | Nguyễn Huy Hiệu`} lang="vi">
+  <Header currentPage="blog" lang="vi" t={t} />
+  <main class="pt-20">
+    <section class="py-24 relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-700/8 via-accent-900/3 to-transparent"></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-900/50 border border-accent-700/30 mb-4">
+            <span class="text-accent-400 text-sm font-medium">{t.blog.pageSubtitle}</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold">
+            {t.blog.pageTitle}
+          </h1>
+        </div>
+
+        <div class="text-center py-20">
+          <p class="text-accent-300/60 text-lg">Sắp ra mắt...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
