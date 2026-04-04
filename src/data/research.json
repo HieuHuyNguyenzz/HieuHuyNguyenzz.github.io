@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "research-1",
+    "title": "Research Topic Placeholder 1",
+    "shortDesc": "Brief summary of this research for the listing page.",
+    "authors": "Hieu Huy Nguyen, Co-Author Name",
+    "venue": "Conference/Journal Name",
+    "year": "2024",
+    "abstract": "Full abstract of the research paper. Describe the problem, methodology, and key findings in detail. This is where you put the complete summary of your research work.",
+    "keywords": ["Machine Learning", "AI", "Research"],
+    "pdfLink": "#",
+    "codeLink": "#",
+    "status": "published"
+  },
+  {
+    "slug": "research-2",
+    "title": "Research Topic Placeholder 2",
+    "shortDesc": "Brief summary of this research for the listing page.",
+    "authors": "Hieu Huy Nguyen, Co-Author Name",
+    "venue": "Conference/Journal Name",
+    "year": "2024",
+    "abstract": "Full abstract of the research paper. Describe the problem, methodology, and key findings in detail. This is where you put the complete summary of your research work.",
+    "keywords": ["Deep Learning", "NLP", "Paper"],
+    "pdfLink": "#",
+    "codeLink": "#",
+    "status": "published"
+  },
+  {
+    "slug": "research-3",
+    "title": "Research Topic Placeholder 3",
+    "shortDesc": "Brief summary of this research for the listing page.",
+    "authors": "Hieu Huy Nguyen, Co-Author Name",
+    "venue": "Conference/Journal Name",
+    "year": "2024",
+    "abstract": "Full abstract of the research paper. Describe the problem, methodology, and key findings in detail. This is where you put the complete summary of your research work.",
+    "keywords": ["Computer Vision", "AI", "SOICT"],
+    "pdfLink": "#",
+    "codeLink": "#",
+    "status": "in-progress"
+  },
+  {
+    "slug": "research-4",
+    "title": "Research Topic Placeholder 4",
+    "shortDesc": "Brief summary of this research for the listing page.",
+    "authors": "Hieu Huy Nguyen",
+    "venue": "TBD",
+    "year": "2025",
+    "abstract": "Full abstract of the research paper. Describe the problem, methodology, and key findings in detail. This is where you put the complete summary of your research work.",
+    "keywords": ["Cybersecurity", "AI", "Detection"],
+    "pdfLink": "#",
+    "codeLink": "#",
+    "status": "in-progress"
+  },
+  {
+    "slug": "research-5",
+    "title": "Research Topic Placeholder 5",
+    "shortDesc": "Brief summary of this research for the listing page.",
+    "authors": "Hieu Huy Nguyen, Co-Author Name",
+    "venue": "Conference/Journal Name",
+    "year": "2025",
+    "abstract": "Full abstract of the research paper. Describe the problem, methodology, and key findings in detail. This is where you put the complete summary of your research work.",
+    "keywords": ["LLM", "Fine-tuning", "Vietnamese"],
+    "pdfLink": "#",
+    "codeLink": "#",
+    "status": "planned"
+  }
+]

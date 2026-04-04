@@ -1,0 +1,146 @@
+{
+  "site": {
+    "title": "Nguyễn Huy Hiệu | Kỹ sư AI & Nghiên cứu",
+    "description": "Portfolio Kỹ sư AI & Nhà nghiên cứu"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "research": "Nghiên cứu",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "common": {
+    "openToOpportunities": "Sẵn sàng cơ hội mới",
+    "viewMyResearch": "Xem Nghiên cứu",
+    "viewMyProjects": "Xem Dự án",
+    "viewDetails": "Xem chi tiết",
+    "backToResearch": "Quay lại Nghiên cứu",
+    "backToProjects": "Quay lại Dự án",
+    "viewPdf": "Xem PDF",
+    "viewCode": "Xem Code",
+    "sourceCode": "Mã nguồn",
+    "liveDemo": "Demo trực tuyến",
+    "published": "đã công bố",
+    "inProgress": "đang thực hiện",
+    "planned": "dự kiến",
+    "completed": "hoàn thành",
+    "aboutMe": "Giới thiệu",
+    "backgroundSkills": "Nền tảng, kỹ năng & kinh nghiệm",
+    "academicPubs": "Công bố học thuật & bài báo",
+    "personalWork": "Dự án cá nhân & mã nguồn mở"
+  },
+  "home": {
+    "greeting": "Xin chào, tôi là",
+    "badge": "Kỹ sư AI & Trợ lý Nghiên cứu",
+    "bio": "Kỹ sư AI tại Viettel Cyber Security & Nghiên cứu sinh tại AINI Lab, Trung tâm An ninh mạng BK, SOICT.",
+    "bioSecondary": "Tập trung ứng dụng trí tuệ nhân tạo và học máy để phát triển các giải pháp an ninh mạng và nghiên cứu chuyên sâu về xử lý ngôn ngữ tự nhiên và học sâu."
+  },
+  "about": {
+    "pageTitle": "Giới thiệu",
+    "pageSubtitle": "Về tôi",
+    "introduction": {
+      "title": "Giới thiệu",
+      "text": "Viết phần giới thiệu của bạn tại đây. Mô tả nền tảng, sở thích và động lực của bạn với tư cách là kỹ sư AI và nhà nghiên cứu. Đề cập đến vai trò hiện tại, trường đại học và nhóm nghiên cứu."
+    },
+    "education": {
+      "title": "Học vấn",
+      "entries": [
+        {
+          "period": "2020 – Nay",
+          "degree": "Cử nhân Khoa học Máy tính",
+          "institution": "Trường Đại học Xây dựng Hà Nội (HUCE)",
+          "desc": "Thêm chi tiết về chương trình học, GPA, các môn liên quan, thành tích..."
+        },
+        {
+          "period": "2017 – 2020",
+          "degree": "Trung học Phổ thông",
+          "institution": "Tên trường THPT",
+          "desc": "Thêm chi tiết về quá trình học cấp 3..."
+        },
+        {
+          "period": "2013 – 2017",
+          "degree": "Trung học Cơ sở",
+          "institution": "Tên trường THCS",
+          "desc": "Thêm chi tiết về quá trình học cấp 2..."
+        },
+        {
+          "period": "2008 – 2013",
+          "degree": "Tiểu học",
+          "institution": "Tên trường Tiểu học",
+          "desc": "Thêm chi tiết về quá trình học tiểu học..."
+        }
+      ]
+    },
+    "experience": {
+      "title": "Kinh nghiệm",
+      "entries": [
+        {
+          "period": "2023 – Nay",
+          "role": "Trợ lý Nghiên cứu Sinh viên",
+          "company": "Nhóm AINI, Trung tâm An ninh mạng BK, SOICT",
+          "desc": "Mô tả trách nhiệm, dự án và đóng góp của bạn..."
+        },
+        {
+          "period": "Năm – Năm",
+          "role": "Thêm mục kinh nghiệm",
+          "company": "Tên công ty / tổ chức",
+          "desc": "Mô tả..."
+        },
+        {
+          "period": "Năm – Năm",
+          "role": "Thêm mục kinh nghiệm",
+          "company": "Tên công ty / tổ chức",
+          "desc": "Mô tả..."
+        },
+        {
+          "period": "Năm – Năm",
+          "role": "Thêm mục kinh nghiệm",
+          "company": "Tên công ty / tổ chức",
+          "desc": "Mô tả..."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Kỹ năng",
+      "programming": "Ngôn ngữ lập trình",
+      "frameworks": "Framework & Thư viện",
+      "tools": "Công cụ & Nền tảng",
+      "research": "Lĩnh vực nghiên cứu"
+    }
+  },
+  "research": {
+    "pageTitle": "Nghiên cứu",
+    "pageSubtitle": "Hướng nghiên cứu",
+    "pageDesc": "Công bố học thuật, bài báo và các nghiên cứu đang thực hiện.",
+    "sections": {
+      "abstract": "Tóm tắt",
+      "keywords": "Từ khóa",
+      "authors": "Tác giả",
+      "venue": "Hội thảo / Tạp chí"
+    }
+  },
+  "projects": {
+    "pageTitle": "Dự án",
+    "pageSubtitle": "Sản phẩm",
+    "pageDesc": "Dự án cá nhân, đóng góp mã nguồn mở và những sản phẩm tôi đã xây dựng.",
+    "sections": {
+      "description": "Mô tả",
+      "techStack": "Công nghệ",
+      "features": "Tính năng chính"
+    }
+  },
+  "contact": {
+    "pageTitle": "Liên hệ",
+    "pageSubtitle": "Kết nối",
+    "title": "Hãy kết nối nhé",
+    "desc": "Tôi luôn sẵn sàng trao đổi về cơ hội mới, hợp tác nghiên cứu, hoặc đơn giản là trò chuyện về AI và công nghệ.",
+    "email": "Email",
+    "location": "Vị trí",
+    "findMeOn": "Tìm tôi trên"
+  },
+  "footer": {
+    "rights": "Mọi quyền được bảo lưu.",
+    "builtWith": "Xây dựng với {astro} + {tailwind}"
+  }
+}

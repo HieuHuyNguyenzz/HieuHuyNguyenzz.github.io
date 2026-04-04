@@ -1,0 +1,93 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  currentPage?: string;
+  lang?: 'en' | 'vi';
+  t: any;
+}
+
+const { currentPage = '', lang = 'en', t } = Astro.props;
+
+const prefix = lang === 'vi' ? '/vi' : '';
+
+const navLinks = [
+  { href: `${prefix}/`, label: t.nav.home, key: '' },
+  { href: `${prefix}/about`, label: t.nav.about, key: 'about' },
+  { href: `${prefix}/research`, label: t.nav.research, key: 'research' },
+  { href: `${prefix}/projects`, label: t.nav.projects, key: 'projects' },
+  { href: `${prefix}/contact`, label: t.nav.contact, key: 'contact' },
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-dark-border">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href={`${prefix}/`} class="text-xl font-bold relative group">
+      <span class="bg-gradient-to-r from-accent-300 via-accent-500 to-accent-700 bg-clip-text text-transparent">
+        HieuHuyNguyen
+      </span>
+      <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-accent-red rounded-full group-hover:w-full transition-all duration-500"></span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-6">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-medium transition-colors duration-300 relative after:content-[\'\'] after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-accent-500 after:transition-all after:duration-300',
+              currentPage === link.key
+                ? 'text-accent-300 after:w-full'
+                : 'text-accent-300/70 hover:text-accent-300 after:w-0 hover:after:w-full'
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <LanguageSwitcher currentLang={lang} currentPage={currentPage} />
+      </li>
+    </ul>
+
+    <button id="menu-btn" class="md:hidden text-accent-300/70 hover:text-accent-300 transition-colors">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border">
+    <ul class="flex flex-col items-center gap-6 py-8">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              'text-lg font-medium transition-colors duration-300',
+              currentPage === link.key ? 'text-accent-300' : 'text-accent-300/70 hover:text-accent-300'
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <LanguageSwitcher currentLang={lang} currentPage={currentPage} />
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>

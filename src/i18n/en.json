@@ -1,0 +1,146 @@
+{
+  "site": {
+    "title": "Huy Hieu Nguyen | AI Engineer & Research Assistant",
+    "description": "AI Engineer & Researcher Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "research": "Research",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "common": {
+    "openToOpportunities": "Open to opportunities",
+    "viewMyResearch": "View My Research",
+    "viewMyProjects": "View My Projects",
+    "viewDetails": "View Details",
+    "backToResearch": "Back to Research",
+    "backToProjects": "Back to Projects",
+    "viewPdf": "View PDF",
+    "viewCode": "View Code",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo",
+    "published": "published",
+    "inProgress": "in progress",
+    "planned": "planned",
+    "completed": "completed",
+    "aboutMe": "About Me",
+    "backgroundSkills": "Background, skills & experience",
+    "academicPubs": "Academic publications & papers",
+    "personalWork": "Personal & open-source work"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "badge": "AI Engineer & Research Assistant",
+    "bio": "AI Engineer at Viettel Cyber Security & Research Assistant at AINI Lab, BK Cyber Security Center, SOICT.",
+    "bioSecondary": "Focused on leveraging artificial intelligence and machine learning to advance cybersecurity solutions and drive impactful research in natural language processing and deep learning."
+  },
+  "about": {
+    "pageTitle": "About",
+    "pageSubtitle": "Who I Am",
+    "introduction": {
+      "title": "Introduction",
+      "text": "Write your introduction here. Describe your background, interests, and what drives you as an AI engineer and researcher. Mention your current role, university, and research team."
+    },
+    "education": {
+      "title": "Education",
+      "entries": [
+        {
+          "period": "2020 – Present",
+          "degree": "Bachelor of Computer Science",
+          "institution": "Hanoi University of Civil Engineering (HUCE)",
+          "desc": "Add details about your program, GPA, relevant coursework, achievements..."
+        },
+        {
+          "period": "2017 – 2020",
+          "degree": "High School",
+          "institution": "High School Name",
+          "desc": "Add details about your high school education..."
+        },
+        {
+          "period": "2013 – 2017",
+          "degree": "Middle School",
+          "institution": "Middle School Name",
+          "desc": "Add details about your middle school education..."
+        },
+        {
+          "period": "2008 – 2013",
+          "degree": "Elementary School",
+          "institution": "Elementary School Name",
+          "desc": "Add details about your elementary school education..."
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "entries": [
+        {
+          "period": "2023 – Present",
+          "role": "Undergraduate Research Assistant",
+          "company": "AINI Research Team, BK Cyber Security Center, SOICT",
+          "desc": "Describe your responsibilities, projects, and contributions..."
+        },
+        {
+          "period": "Year – Year",
+          "role": "Add experience entry",
+          "company": "Company / Organization",
+          "desc": "Description..."
+        },
+        {
+          "period": "Year – Year",
+          "role": "Add experience entry",
+          "company": "Company / Organization",
+          "desc": "Description..."
+        },
+        {
+          "period": "Year – Year",
+          "role": "Add experience entry",
+          "company": "Company / Organization",
+          "desc": "Description..."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "programming": "Programming Languages",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Platforms",
+      "research": "Research Areas"
+    }
+  },
+  "research": {
+    "pageTitle": "Research",
+    "pageSubtitle": "What I Work On",
+    "pageDesc": "Academic publications, papers, and ongoing research work.",
+    "sections": {
+      "abstract": "Abstract",
+      "keywords": "Keywords",
+      "authors": "Authors",
+      "venue": "Venue"
+    }
+  },
+  "projects": {
+    "pageTitle": "Projects",
+    "pageSubtitle": "What I Build",
+    "pageDesc": "Side projects, open-source contributions, and things I've built for fun.",
+    "sections": {
+      "description": "Description",
+      "techStack": "Tech Stack",
+      "features": "Key Features"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "pageSubtitle": "Get In Touch",
+    "title": "Let's Connect",
+    "desc": "I'm always open to discussing new opportunities, research collaborations, or just a friendly chat about AI and tech.",
+    "email": "Email",
+    "location": "Location",
+    "findMeOn": "Find me on"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with {astro} + {tailwind}"
+  }
+}

@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+---
+
+<BaseLayout title={`${t.about.pageTitle} | Huy Hieu Nguyen`}>
+  <Header currentPage="about" lang="en" t={t} />
+  <main class="pt-20">
+    <section class="py-24 relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-700/8 via-accent-900/3 to-transparent"></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-900/50 border border-accent-700/30 mb-4">
+            <span class="text-accent-400 text-sm font-medium">{t.about.pageSubtitle}</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold">
+            {t.about.pageTitle} <span class="bg-gradient-to-r from-accent-200 via-accent-400 to-accent-600 bg-clip-text text-transparent">Me</span>
+          </h1>
+        </div>
+
+        <div class="space-y-16">
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-4 flex items-center gap-3">
+              <i class="fas fa-user text-accent-400"></i> {t.about.introduction.title}
+            </h2>
+            <p class="text-accent-300/60 leading-relaxed">
+              {t.about.introduction.text}
+            </p>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+              <i class="fas fa-graduation-cap text-accent-400"></i> {t.about.education.title}
+            </h2>
+            <div class="space-y-6">
+              {t.about.education.entries.map((entry, i) => (
+                <div class:list={["flex flex-col md:flex-row md:items-start gap-4", i < t.about.education.entries.length - 1 ? "pb-6 border-b border-dark-border" : ""]}>
+                  <div class="flex-shrink-0 w-32">
+                    <span class="text-accent-400 text-sm font-medium">{entry.period}</span>
+                  </div>
+                  <div>
+                    <h3 class="text-accent-200 font-semibold mb-1">{entry.degree}</h3>
+                    <p class="text-accent-300/50 text-sm">{entry.institution}</p>
+                    <p class="text-accent-300/40 text-sm mt-1">{entry.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+              <i class="fas fa-briefcase text-accent-400"></i> {t.about.experience.title}
+            </h2>
+            <div class="space-y-6">
+              {t.about.experience.entries.map((entry, i) => (
+                <div class:list={["flex flex-col md:flex-row md:items-start gap-4", i < t.about.experience.entries.length - 1 ? "pb-6 border-b border-dark-border" : ""]}>
+                  <div class="flex-shrink-0 w-32">
+                    <span class="text-accent-400 text-sm font-medium">{entry.period}</span>
+                  </div>
+                  <div>
+                    <h3 class="text-accent-200 font-semibold mb-1">{entry.role}</h3>
+                    <p class="text-accent-300/50 text-sm">{entry.company}</p>
+                    <p class="text-accent-300/40 text-sm mt-1">{entry.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+              <i class="fas fa-cogs text-accent-400"></i> {t.about.skills.title}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="text-accent-300 font-medium mb-3 text-sm uppercase tracking-wide">{t.about.skills.programming}</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Python</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">JavaScript</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Add more...</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-accent-300 font-medium mb-3 text-sm uppercase tracking-wide">{t.about.skills.frameworks}</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">TensorFlow</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">PyTorch</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Add more...</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-accent-300 font-medium mb-3 text-sm uppercase tracking-wide">{t.about.skills.tools}</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Git</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Docker</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Add more...</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-accent-300 font-medium mb-3 text-sm uppercase tracking-wide">{t.about.skills.research}</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Machine Learning</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">NLP</span>
+                  <span class="px-3 py-1 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30">Add more...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
