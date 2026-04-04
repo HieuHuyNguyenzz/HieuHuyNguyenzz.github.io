@@ -1,22 +1,19 @@
 {
   "site": {
-    "title": "Nguyễn Huy Hiệu | Kỹ sư AI & Nghiên cứu",
-    "description": "Portfolio Kỹ sư AI & Nhà nghiên cứu"
+    "title": "Nguyễn Huy Hiệu | Kỹ sư AI & Trợ lý Nghiên cứu",
+    "description": "Portfolio Kỹ sư AI & Trợ lý Nghiên cứu"
   },
   "nav": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "research": "Nghiên cứu",
-    "projects": "Dự án",
     "contact": "Liên hệ"
   },
   "common": {
     "openToOpportunities": "Sẵn sàng cơ hội mới",
     "viewMyResearch": "Xem Nghiên cứu",
-    "viewMyProjects": "Xem Dự án",
     "viewDetails": "Xem chi tiết",
     "backToResearch": "Quay lại Nghiên cứu",
-    "backToProjects": "Quay lại Dự án",
     "viewPdf": "Xem PDF",
     "viewCode": "Xem Code",
     "sourceCode": "Mã nguồn",
@@ -24,8 +21,6 @@
     "published": "đã công bố",
     "underReview": "đang phản biện",
     "inProgress": "đang thực hiện",
-    "planned": "dự kiến",
-    "completed": "hoàn thành",
     "firstAuthor": "Tác giả chính",
     "researchSections": {
       "published": "Bài báo đã công bố",
@@ -34,48 +29,35 @@
     },
     "aboutMe": "Giới thiệu",
     "backgroundSkills": "Nền tảng, kỹ năng & kinh nghiệm",
-    "academicPubs": "Công bố học thuật & bài báo",
-    "personalWork": "Dự án cá nhân & mã nguồn mở"
+    "academicPubs": "Công bố học thuật & bài báo"
   },
   "home": {
     "greeting": "Xin chào, tôi là",
     "badge": "Kỹ sư AI & Trợ lý Nghiên cứu",
-    "bio": "Kỹ sư AI tại Viettel Cyber Security & Nghiên cứu sinh tại AINI Lab, Trung tâm An ninh mạng BK, SOICT.",
-    "bioSecondary": "Tập trung ứng dụng trí tuệ nhân tạo và học máy để phát triển các giải pháp an ninh mạng và nghiên cứu chuyên sâu về xử lý ngôn ngữ tự nhiên và học sâu."
+    "bio": "Kỹ sư AI tại Viettel Cyber Security & Trợ lý Nghiên cứu tại AINI Lab, Trung tâm An ninh mạng BK, SOICT.",
+    "bioSecondary": "Tập trung ứng dụng trí tuệ nhân tạo vào giải quyết các vấn đề thực tế, với chuyên môn về Federated Learning, Deep Learning cho an ninh mạng và hệ thống dựa trên LLM."
   },
   "about": {
     "pageTitle": "Giới thiệu",
     "pageSubtitle": "Về tôi",
     "introduction": {
       "title": "Giới thiệu",
-      "text": "Viết phần giới thiệu của bạn tại đây. Mô tả nền tảng, sở thích và động lực của bạn với tư cách là kỹ sư AI và nhà nghiên cứu. Đề cập đến vai trò hiện tại, trường đại học và nhóm nghiên cứu."
+      "text": "Tôi là Kỹ sư AI tại Viettel Cyber Security và Trợ lý Nghiên cứu tại AINI (AI Network Innovation) Labs, Đại học Bách Khoa Hà Nội. Nghiên cứu của tôi tập trung vào Federated Learning, Deep Learning cho phân loại lưu lượng mạng và hệ thống AI dựa trên LLM. Tôi đam mê kết nối giữa nghiên cứu học thuật và ứng dụng thực tiễn trong an ninh mạng và AI."
     },
     "education": {
       "title": "Học vấn",
       "entries": [
         {
-          "period": "2020 – Nay",
-          "degree": "Cử nhân Khoa học Máy tính",
-          "institution": "Trường Đại học Xây dựng Hà Nội (HUCE)",
-          "desc": "Thêm chi tiết về chương trình học, GPA, các môn liên quan, thành tích..."
+          "period": "2020 – 2025",
+          "degree": "Cử nhân Khoa học Máy tính (GPA: 3.2)",
+          "institution": "Trường Đại học Xây dựng Hà Nội (Top 7 trường Kỹ thuật tại Việt Nam)",
+          "desc": ""
         },
         {
           "period": "2017 – 2020",
-          "degree": "Trung học Phổ thông",
-          "institution": "Tên trường THPT",
-          "desc": "Thêm chi tiết về quá trình học cấp 3..."
-        },
-        {
-          "period": "2013 – 2017",
-          "degree": "Trung học Cơ sở",
-          "institution": "Tên trường THCS",
-          "desc": "Thêm chi tiết về quá trình học cấp 2..."
-        },
-        {
-          "period": "2008 – 2013",
-          "degree": "Tiểu học",
-          "institution": "Tên trường Tiểu học",
-          "desc": "Thêm chi tiết về quá trình học tiểu học..."
+          "degree": "THPT Chuyên Toán",
+          "institution": "Trường THPT Chuyên Đại học Khoa học Tự nhiên (HUS)",
+          "desc": ""
         }
       ]
     },
@@ -83,37 +65,31 @@
       "title": "Kinh nghiệm",
       "entries": [
         {
-          "period": "2023 – Nay",
-          "role": "Trợ lý Nghiên cứu Sinh viên",
-          "company": "Nhóm AINI, Trung tâm An ninh mạng BK, SOICT",
-          "desc": "Mô tả trách nhiệm, dự án và đóng góp của bạn..."
+          "period": "10/2025 – Nay",
+          "role": "Kỹ sư AI",
+          "company": "Viettel Cyber Security (VCS), Tập đoàn Viettel",
+          "desc": "Xây dựng quy trình AI và Chatbot sử dụng nền tảng Dify.AI. Phát triển MCP server để kết nối mô hình LLM với tri thức công ty."
         },
         {
-          "period": "Năm – Năm",
-          "role": "Thêm mục kinh nghiệm",
-          "company": "Tên công ty / tổ chức",
-          "desc": "Mô tả..."
+          "period": "4/2023 – Nay",
+          "role": "Trợ lý Nghiên cứu",
+          "company": "AINI Labs, Đại học Bách Khoa Hà Nội",
+          "desc": "Ứng dụng kỹ thuật Deep Learning cho phân loại lưu lượng mạng mã hóa thời gian thực. Nghiên cứu Federated Learning tập trung vào dữ liệu Non-IID, hiệu ứng straggler và bảo vệ quyền riêng tư."
         },
         {
-          "period": "Năm – Năm",
-          "role": "Thêm mục kinh nghiệm",
-          "company": "Tên công ty / tổ chức",
-          "desc": "Mô tả..."
-        },
-        {
-          "period": "Năm – Năm",
-          "role": "Thêm mục kinh nghiệm",
-          "company": "Tên công ty / tổ chức",
-          "desc": "Mô tả..."
+          "period": "6/2024 – 12/2024",
+          "role": "Thực tập sinh",
+          "company": "Trung tâm CNTT & CSDL, Đại học Xây dựng Hà Nội",
+          "desc": "Nghiên cứu các vấn đề về hệ thống mạng. Triển khai hệ thống e-learning cho nhà trường."
         }
       ]
     },
     "skills": {
-      "title": "Kỹ năng",
+      "title": "Kỹ năng & Chứng chỉ",
       "programming": "Ngôn ngữ lập trình",
-      "frameworks": "Framework & Thư viện",
-      "tools": "Công cụ & Nền tảng",
-      "research": "Lĩnh vực nghiên cứu"
+      "frameworks": "Thư viện & Framework",
+      "tools": "Kỹ năng khác",
+      "certificates": "Chứng chỉ"
     }
   },
   "research": {
@@ -125,16 +101,6 @@
       "keywords": "Từ khóa",
       "authors": "Tác giả",
       "venue": "Hội thảo / Tạp chí"
-    }
-  },
-  "projects": {
-    "pageTitle": "Dự án",
-    "pageSubtitle": "Sản phẩm",
-    "pageDesc": "Dự án cá nhân, đóng góp mã nguồn mở và những sản phẩm tôi đã xây dựng.",
-    "sections": {
-      "description": "Mô tả",
-      "techStack": "Công nghệ",
-      "features": "Tính năng chính"
     }
   },
   "contact": {

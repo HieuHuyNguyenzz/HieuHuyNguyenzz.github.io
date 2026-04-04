@@ -7,16 +7,13 @@
     "home": "Home",
     "about": "About",
     "research": "Research",
-    "projects": "Projects",
     "contact": "Contact"
   },
   "common": {
     "openToOpportunities": "Open to opportunities",
     "viewMyResearch": "View My Research",
-    "viewMyProjects": "View My Projects",
     "viewDetails": "View Details",
     "backToResearch": "Back to Research",
-    "backToProjects": "Back to Projects",
     "viewPdf": "View PDF",
     "viewCode": "View Code",
     "sourceCode": "Source Code",
@@ -24,8 +21,6 @@
     "published": "published",
     "underReview": "under review",
     "inProgress": "in progress",
-    "planned": "planned",
-    "completed": "completed",
     "firstAuthor": "First Author",
     "researchSections": {
       "published": "Published Papers",
@@ -34,48 +29,35 @@
     },
     "aboutMe": "About Me",
     "backgroundSkills": "Background, skills & experience",
-    "academicPubs": "Academic publications & papers",
-    "personalWork": "Personal & open-source work"
+    "academicPubs": "Academic publications & papers"
   },
   "home": {
     "greeting": "Hi, I'm",
     "badge": "AI Engineer & Research Assistant",
     "bio": "AI Engineer at Viettel Cyber Security & Research Assistant at AINI Lab, BK Cyber Security Center, SOICT.",
-    "bioSecondary": "Focused on leveraging artificial intelligence and machine learning to advance cybersecurity solutions and drive impactful research in natural language processing and deep learning."
+    "bioSecondary": "Focused on applying artificial intelligence to solving real-world problems, with expertise in federated learning, deep learning for network security, and LLM-based systems."
   },
   "about": {
     "pageTitle": "About",
     "pageSubtitle": "Who I Am",
     "introduction": {
       "title": "Introduction",
-      "text": "Write your introduction here. Describe your background, interests, and what drives you as an AI engineer and researcher. Mention your current role, university, and research team."
+      "text": "I am an AI Engineer at Viettel Cyber Security and a Research Assistant at AINI (AI Network Innovation) Labs, Hanoi University of Science and Technology. My research focuses on federated learning, deep learning for network traffic classification, and LLM-based AI systems. I am passionate about bridging the gap between academic research and real-world applications in cybersecurity and AI."
     },
     "education": {
       "title": "Education",
       "entries": [
         {
-          "period": "2020 – Present",
-          "degree": "Bachelor of Computer Science",
-          "institution": "Hanoi University of Civil Engineering (HUCE)",
-          "desc": "Add details about your program, GPA, relevant coursework, achievements..."
+          "period": "2020 – 2025",
+          "degree": "Bachelor of Computer Science (GPA: 3.2)",
+          "institution": "Hanoi University of Civil Engineering (Top 7 Engineering Universities in Vietnam)",
+          "desc": ""
         },
         {
           "period": "2017 – 2020",
-          "degree": "High School",
-          "institution": "High School Name",
-          "desc": "Add details about your high school education..."
-        },
-        {
-          "period": "2013 – 2017",
-          "degree": "Middle School",
-          "institution": "Middle School Name",
-          "desc": "Add details about your middle school education..."
-        },
-        {
-          "period": "2008 – 2013",
-          "degree": "Elementary School",
-          "institution": "Elementary School Name",
-          "desc": "Add details about your elementary school education..."
+          "degree": "High School – Specializes in Mathematics",
+          "institution": "HUS High School for Gifted Students",
+          "desc": ""
         }
       ]
     },
@@ -83,37 +65,31 @@
       "title": "Experience",
       "entries": [
         {
-          "period": "2023 – Present",
-          "role": "Undergraduate Research Assistant",
-          "company": "AINI Research Team, BK Cyber Security Center, SOICT",
-          "desc": "Describe your responsibilities, projects, and contributions..."
+          "period": "10/2025 – Present",
+          "role": "AI Engineer",
+          "company": "Viettel Cyber Security (VCS), Viettel Group",
+          "desc": "Building AI workflow and Chatbot using Dify.AI platform. Developing MCP servers to connect LLM models with company knowledge."
         },
         {
-          "period": "Year – Year",
-          "role": "Add experience entry",
-          "company": "Company / Organization",
-          "desc": "Description..."
+          "period": "4/2023 – Present",
+          "role": "Research Assistant",
+          "company": "AINI Labs, Hanoi University of Science and Technology",
+          "desc": "Applying Deep Learning techniques for real-time encrypted network traffic classification. Federated Learning research focusing on Non-IID data, straggler effect, and privacy preservation."
         },
         {
-          "period": "Year – Year",
-          "role": "Add experience entry",
-          "company": "Company / Organization",
-          "desc": "Description..."
-        },
-        {
-          "period": "Year – Year",
-          "role": "Add experience entry",
-          "company": "Company / Organization",
-          "desc": "Description..."
+          "period": "6/2024 – 12/2024",
+          "role": "Intern",
+          "company": "IT & Database Center, Hanoi University of Civil Engineering",
+          "desc": "Research on network system problems. Deploying e-learning system for the university."
         }
       ]
     },
     "skills": {
-      "title": "Skills",
+      "title": "Skills & Certificates",
       "programming": "Programming Languages",
-      "frameworks": "Frameworks & Libraries",
-      "tools": "Tools & Platforms",
-      "research": "Research Areas"
+      "frameworks": "Libraries & Frameworks",
+      "tools": "Other Skills",
+      "certificates": "Certificates"
     }
   },
   "research": {
@@ -125,16 +101,6 @@
       "keywords": "Keywords",
       "authors": "Authors",
       "venue": "Venue"
-    }
-  },
-  "projects": {
-    "pageTitle": "Projects",
-    "pageSubtitle": "What I Build",
-    "pageDesc": "Side projects, open-source contributions, and things I've built for fun.",
-    "sections": {
-      "description": "Description",
-      "techStack": "Tech Stack",
-      "features": "Key Features"
     }
   },
   "contact": {
