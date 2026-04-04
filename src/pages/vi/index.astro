@@ -43,7 +43,7 @@ const t = vi;
           {t.home.bioSecondary}
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <a href="/vi/about" class="group p-6 rounded-2xl bg-dark-card border border-dark-border hover:border-accent-700/50 transition-all duration-300 hover:-translate-y-1 text-left">
             <i class="fas fa-user text-accent-400 mb-3 text-xl"></i>
             <h3 class="text-lg font-semibold text-accent-200 mb-1">{t.common.aboutMe}</h3>
@@ -58,6 +58,11 @@ const t = vi;
             <i class="fas fa-code text-accent-400 mb-3 text-xl"></i>
             <h3 class="text-lg font-semibold text-accent-200 mb-1">{t.nav.projects}</h3>
             <p class="text-accent-300/50 text-sm">{t.common.personalWork}</p>
+          </a>
+          <a href="/vi/activities" class="group p-6 rounded-2xl bg-dark-card border border-dark-border hover:border-accent-700/50 transition-all duration-300 hover:-translate-y-1 text-left">
+            <i class="fas fa-trophy text-accent-400 mb-3 text-xl"></i>
+            <h3 class="text-lg font-semibold text-accent-200 mb-1">{t.nav.activities}</h3>
+            <p class="text-accent-300/50 text-sm">{t.activities.pageDesc}</p>
           </a>
         </div>
       </div>

@@ -7,16 +7,56 @@ import en from '../i18n/en.json';
 const t = en;
 
 const awards = [
-  { prize: "First & Second prizes", event: "HUCE Student Scientific Research Award", year: "2024" },
-  { prize: "First prize", event: "HUCE Olympiad in IT", year: "2023" },
-  { prize: "Third prize (50th place)", event: "32nd Vietnam IT Student Olympiad", year: "2023" },
-  { prize: "Third prize", event: "National-level Student Scientific Research Award", year: "2024/2025" },
-  { prize: "Consolation prize (75th place)", event: "31st Vietnam IT Student Olympiad", year: "2022" },
+  {
+    prize: "Third Prize",
+    level: "National",
+    event: "National-level Student Scientific Research Award",
+    year: "2024/2025",
+    icon: "fa-medal",
+  },
+  {
+    prize: "First & Second Prizes",
+    level: "University",
+    event: "HUCE Student Scientific Research Award",
+    year: "2024",
+    icon: "fa-trophy",
+  },
+  {
+    prize: "Third Prize (50th place)",
+    level: "National",
+    event: "32nd Vietnam IT Student Olympiad",
+    year: "2023",
+    icon: "fa-code",
+  },
+  {
+    prize: "First Prize",
+    level: "University",
+    event: "HUCE Olympiad in IT",
+    year: "2023",
+    icon: "fa-laptop-code",
+  },
+  {
+    prize: "Consolation Prize (75th place)",
+    level: "National",
+    event: "31st Vietnam IT Student Olympiad",
+    year: "2022",
+    icon: "fa-code",
+  },
 ];
 
 const activities = [
-  { role: "Member", org: "Sakura Science Club (Japan)", period: "2018 – Present" },
-  { role: "Student", org: "SOICT Summer School in Generative AI", period: "8/19/2024 – 8/23/2024" },
+  {
+    role: "Member",
+    org: "Sakura Science Club (Japan)",
+    period: "2018 – Present",
+    desc: "Active member of an international science club promoting cultural and scientific exchange between Vietnam and Japan.",
+  },
+  {
+    role: "Student",
+    org: "SOICT Summer School in Generative AI",
+    period: "Aug 2024",
+    desc: "Intensive 5-day program on Generative AI, covering latest advancements in LLMs, diffusion models, and their applications.",
+  },
 ];
 ---
 
@@ -39,42 +79,66 @@ const activities = [
           </p>
         </div>
 
-        <div class="space-y-12">
-          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
-            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
-              <i class="fas fa-trophy text-accent-400"></i> {t.activities.sections.awards}
-            </h2>
-            <div class="space-y-4">
-              {awards.map((a, i) => (
-                <div class:list={["flex flex-col md:flex-row md:items-center gap-2 md:gap-4", i < awards.length - 1 ? "pb-4 border-b border-dark-border" : ""]}>
-                  <div class="flex-shrink-0 w-40">
-                    <span class="text-accent-400 text-sm font-medium">{a.prize}</span>
+        <div class="mb-16">
+          <h2 class="text-xl font-semibold text-accent-200 mb-8 flex items-center gap-3">
+            <i class="fas fa-trophy text-accent-400"></i> {t.activities.sections.awards}
+          </h2>
+
+          <div class="relative">
+            <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-500/40 via-accent-700/20 to-transparent"></div>
+
+            <div class="space-y-6">
+              {awards.map((a) => (
+                <div class="relative flex gap-6 group">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-card border-2 border-accent-500/40 flex items-center justify-center z-10 group-hover:border-accent-400 group-hover:shadow-lg group-hover:shadow-accent-500/20 transition-all duration-300">
+                    <i class={`fas ${a.icon} text-accent-400 text-xs`}></i>
                   </div>
-                  <div class="flex-1">
-                    <p class="text-accent-300/70 text-sm">{a.event}</p>
+
+                  <div class="flex-1 bg-dark-card border border-dark-border rounded-xl p-5 hover:border-accent-500/30 transition-all duration-300 group-hover:-translate-y-0.5">
+                    <div class="flex items-start justify-between gap-3 mb-2">
+                      <div>
+                        <h3 class="text-accent-200 font-semibold">{a.event}</h3>
+                        <p class="text-accent-400 text-sm mt-1">{a.prize}</p>
+                      </div>
+                      <div class="flex flex-col items-end gap-1">
+                        <span class="text-accent-300/30 text-xs whitespace-nowrap">{a.year}</span>
+                        <span class="px-2 py-0.5 text-xs rounded-full bg-accent-900/40 text-accent-300/50 border border-accent-700/20">{a.level}</span>
+                      </div>
+                    </div>
                   </div>
-                  <span class="text-accent-300/30 text-sm whitespace-nowrap">{a.year}</span>
                 </div>
               ))}
             </div>
           </div>
+        </div>
 
-          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
-            <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
-              <i class="fas fa-users text-accent-400"></i> {t.activities.sections.activities}
-            </h2>
-            <div class="space-y-4">
-              {activities.map((a, i) => (
-                <div class:list={["flex flex-col md:flex-row md:items-center gap-2 md:gap-4", i < activities.length - 1 ? "pb-4 border-b border-dark-border" : ""]}>
-                  <div class="flex-shrink-0 w-40">
-                    <span class="text-accent-400 text-sm font-medium">{a.role}</span>
+        <div>
+          <h2 class="text-xl font-semibold text-accent-200 mb-8 flex items-center gap-3">
+            <i class="fas fa-users text-accent-400"></i> {t.activities.sections.activities}
+          </h2>
+
+          <div class="relative">
+            <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-400/40 via-accent-700/20 to-transparent"></div>
+
+            <div class="space-y-6">
+              {activities.map((a) => (
+                <div class="relative flex gap-6 group">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-card border-2 border-accent-400/40 flex items-center justify-center z-10 group-hover:border-accent-300 group-hover:shadow-lg group-hover:shadow-accent-400/20 transition-all duration-300">
+                    <i class="fas fa-circle text-accent-400 text-[6px]"></i>
                   </div>
-                  <div class="flex-1">
-                    <p class="text-accent-300/70 text-sm">{a.org}</p>
+
+                  <div class="flex-1 bg-dark-card border border-dark-border rounded-xl p-5 hover:border-accent-400/30 transition-all duration-300 group-hover:-translate-y-0.5">
+                    <div class="flex items-start justify-between gap-3 mb-2">
+                      <div>
+                        <h3 class="text-accent-200 font-semibold">{a.org}</h3>
+                        <p class="text-accent-400 text-sm">{a.role}</p>
+                      </div>
+                      <span class="text-accent-300/30 text-xs whitespace-nowrap">{a.period}</span>
+                    </div>
+                    <p class="text-accent-300/50 text-sm leading-relaxed mt-2">
+                      {a.desc}
+                    </p>
                   </div>
-                  <span class="text-accent-300/30 text-sm whitespace-nowrap">{a.period}</span>
                 </div>
               ))}
             </div>
