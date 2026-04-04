@@ -41,7 +41,7 @@
     "greeting": "Hi, I'm",
     "badge": "AI Engineer & Research Assistant",
     "bio": "AI Engineer at Viettel Cyber Security & Research Assistant at AINI Lab, BK Cyber Security Center, SOICT.",
-    "bioSecondary": "Focused on applying artificial intelligence to solving real-world problems, with expertise in federated learning, deep learning for network security, and LLM-based systems."
+    "bioSecondary": "My core strengths lie in Federated Learning, Deep Learning for network security, and LLM-based AI systems. I aim to become a leading AI researcher bridging academic innovation with enterprise-level cybersecurity solutions. Currently, my research focuses on privacy-preserving machine learning and efficient training strategies for distributed systems."
   },
   "about": {
     "pageTitle": "About",
@@ -63,6 +63,18 @@
           "period": "2017 – 2020",
           "degree": "High School – Specializes in Mathematics",
           "institution": "HUS High School for Gifted Students",
+          "desc": ""
+        },
+        {
+          "period": "2013 – 2017",
+          "degree": "Middle School",
+          "institution": "Nguyen Truong To Secondary School, Hanoi",
+          "desc": ""
+        },
+        {
+          "period": "2008 – 2013",
+          "degree": "Elementary School",
+          "institution": "Cat Linh Primary School, Hanoi",
           "desc": ""
         }
       ]
