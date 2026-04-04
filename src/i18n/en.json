@@ -22,9 +22,16 @@
     "sourceCode": "Source Code",
     "liveDemo": "Live Demo",
     "published": "published",
+    "underReview": "under review",
     "inProgress": "in progress",
     "planned": "planned",
     "completed": "completed",
+    "firstAuthor": "First Author",
+    "researchSections": {
+      "published": "Published Papers",
+      "underReview": "Under Review",
+      "inProgress": "In Progress"
+    },
     "aboutMe": "About Me",
     "backgroundSkills": "Background, skills & experience",
     "academicPubs": "Academic publications & papers",

@@ -1,11 +1,17 @@
 [
   {
     "slug": "project-1",
-    "title": "Project Placeholder 1",
-    "shortDesc": "Brief summary of this project for the listing page.",
-    "description": "Full detailed description of the project. Explain the problem it solves, the architecture, the technologies used, and the key features. This is where you provide a comprehensive overview.",
+    "title": "Project Name 1",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses. What was the motivation behind building it?",
+    "solution": "Explain your approach, architecture decisions, and how the system works at a high level.",
     "techStack": ["Python", "TensorFlow", "React"],
-    "features": ["Feature 1: Description of the first key feature", "Feature 2: Description of the second key feature", "Feature 3: Description of the third key feature"],
+    "results": [
+      "Achieved 95% accuracy on test dataset",
+      "Reduced processing time by 40% compared to baseline",
+      "Deployed and serving 100+ requests per day"
+    ],
+    "screenshots": [],
     "githubLink": "#",
     "demoLink": "#",
     "date": "2024-06",
@@ -13,11 +19,17 @@
   },
   {
     "slug": "project-2",
-    "title": "Project Placeholder 2",
-    "shortDesc": "Brief summary of this project for the listing page.",
-    "description": "Full detailed description of the project. Explain the problem it solves, the architecture, the technologies used, and the key features. This is where you provide a comprehensive overview.",
+    "title": "Project Name 2",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses. What was the motivation behind building it?",
+    "solution": "Explain your approach, architecture decisions, and how the system works at a high level.",
     "techStack": ["Node.js", "Docker", "PostgreSQL"],
-    "features": ["Feature 1: Description of the first key feature", "Feature 2: Description of the second key feature"],
+    "results": [
+      "Handled 1000+ concurrent users",
+      "99.9% uptime over 6 months",
+      "Reduced API response time to under 200ms"
+    ],
+    "screenshots": [],
     "githubLink": "#",
     "demoLink": "#",
     "date": "2024-03",
@@ -25,11 +37,17 @@
   },
   {
     "slug": "project-3",
-    "title": "Project Placeholder 3",
-    "shortDesc": "Brief summary of this project for the listing page.",
-    "description": "Full detailed description of the project. Explain the problem it solves, the architecture, the technologies used, and the key features. This is where you provide a comprehensive overview.",
+    "title": "Project Name 3",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses. What was the motivation behind building it?",
+    "solution": "Explain your approach, architecture decisions, and how the system works at a high level.",
     "techStack": ["TypeScript", "Next.js", "Tailwind"],
-    "features": ["Feature 1: Description of the first key feature", "Feature 2: Description of the second key feature", "Feature 3: Description of the third key feature"],
+    "results": [
+      "Lighthouse performance score: 98/100",
+      "First contentful paint under 1s",
+      "SEO ranking improved by 60%"
+    ],
+    "screenshots": [],
     "githubLink": "#",
     "demoLink": "#",
     "date": "2024-01",
@@ -37,22 +55,34 @@
   },
   {
     "slug": "project-4",
-    "title": "Project Placeholder 4",
-    "shortDesc": "Brief summary of this project for the listing page.",
-    "description": "Full detailed description of the project. Explain the problem it solves, the architecture, the technologies used, and the key features. This is where you provide a comprehensive overview.",
+    "title": "Project Name 4",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses. What was the motivation behind building it?",
+    "solution": "Explain your approach, architecture decisions, and how the system works at a high level.",
     "techStack": ["Python", "FastAPI", "MongoDB"],
-    "features": ["Feature 1: Description of the first key feature", "Feature 2: Description of the second key feature"],
+    "results": [
+      "Processed 10K+ records per batch",
+      "Automated workflow saving 5 hours/week",
+      "Integrated with 3 external APIs"
+    ],
+    "screenshots": [],
     "githubLink": "#",
     "date": "2023-11",
     "status": "in-progress"
   },
   {
     "slug": "project-5",
-    "title": "Project Placeholder 5",
-    "shortDesc": "Brief summary of this project for the listing page.",
-    "description": "Full detailed description of the project. Explain the problem it solves, the architecture, the technologies used, and the key features. This is where you provide a comprehensive overview.",
+    "title": "Project Name 5",
+    "shortDesc": "Brief one-line summary for the listing card.",
+    "problem": "Describe the real-world problem or pain point this project addresses. What was the motivation behind building it?",
+    "solution": "Explain your approach, architecture decisions, and how the system works at a high level.",
     "techStack": ["Rust", "WebAssembly", "React"],
-    "features": ["Feature 1: Description of the first key feature", "Feature 2: Description of the second key feature", "Feature 3: Description of the third key feature"],
+    "results": [
+      "10x faster than JavaScript equivalent",
+      "Bundle size reduced by 70%",
+      "Zero runtime errors in production"
+    ],
+    "screenshots": [],
     "githubLink": "#",
     "demoLink": "#",
     "date": "2025-01",

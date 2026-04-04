@@ -22,9 +22,16 @@
     "sourceCode": "Mã nguồn",
     "liveDemo": "Demo trực tuyến",
     "published": "đã công bố",
+    "underReview": "đang phản biện",
     "inProgress": "đang thực hiện",
     "planned": "dự kiến",
     "completed": "hoàn thành",
+    "firstAuthor": "Tác giả chính",
+    "researchSections": {
+      "published": "Bài báo đã công bố",
+      "underReview": "Đang phản biện",
+      "inProgress": "Đang thực hiện"
+    },
     "aboutMe": "Giới thiệu",
     "backgroundSkills": "Nền tảng, kỹ năng & kinh nghiệm",
     "academicPubs": "Công bố học thuật & bài báo",

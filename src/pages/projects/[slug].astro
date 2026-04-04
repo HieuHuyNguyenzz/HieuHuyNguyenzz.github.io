@@ -53,16 +53,25 @@ const statusColors: Record<string, string> = {
           </h1>
 
           <div class="mb-8">
-            <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
-              <i class="fas fa-info-circle text-accent-400 text-sm"></i> {t.projects.sections.description}
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+              <i class="fas fa-bullseye text-accent-400 text-sm"></i> Problem
             </h2>
             <p class="text-accent-300/60 leading-relaxed">
-              {project.description}
+              {project.problem}
             </p>
           </div>
 
           <div class="mb-8">
-            <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+              <i class="fas fa-lightbulb text-accent-400 text-sm"></i> Solution
+            </h2>
+            <p class="text-accent-300/60 leading-relaxed">
+              {project.solution}
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
               <i class="fas fa-layer-group text-accent-400 text-sm"></i> {t.projects.sections.techStack}
             </h2>
             <div class="flex flex-wrap gap-2">
@@ -74,15 +83,30 @@ const statusColors: Record<string, string> = {
             </div>
           </div>
 
+          {project.screenshots.length > 0 && (
+            <div class="mb-8">
+              <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+                <i class="fas fa-images text-accent-400 text-sm"></i> Screenshots
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.screenshots.map((src) => (
+                  <div class="rounded-lg overflow-hidden border border-dark-border">
+                    <img src={src} alt={project.title} class="w-full h-48 object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div class="mb-8">
             <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
-              <i class="fas fa-star text-accent-400 text-sm"></i> {t.projects.sections.features}
+              <i class="fas fa-chart-line text-accent-400 text-sm"></i> Measured Results
             </h2>
             <ul class="space-y-3">
-              {project.features.map(f => (
+              {project.results.map(result => (
                 <li class="flex items-start gap-3 text-accent-300/60">
-                  <i class="fas fa-check text-accent-400 text-xs mt-1.5 flex-shrink-0"></i>
-                  <span class="text-sm leading-relaxed">{f}</span>
+                  <i class="fas fa-arrow-trend-up text-accent-400 text-xs mt-1.5 flex-shrink-0"></i>
+                  <span class="text-sm leading-relaxed">{result}</span>
                 </li>
               ))}
             </ul>
