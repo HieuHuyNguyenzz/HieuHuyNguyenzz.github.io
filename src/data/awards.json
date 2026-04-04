@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "national-scientific-research-2024",
+    "title": "National-level Student Scientific Research Award",
+    "prize": "Third Prize",
+    "level": "National",
+    "year": "2024/2025",
+    "icon": "fa-medal",
+    "description": "Awarded Third Prize at the National-level Student Scientific Research Award for our research on applying deep learning techniques for real-time encrypted network traffic classification. The project demonstrated significant improvements in classification accuracy and efficiency.",
+    "details": "Our research team developed a novel deep learning approach for classifying encrypted network traffic in real-time. The system achieved high accuracy across multiple protocols and network conditions, contributing to improved network security monitoring capabilities. The competition involved over 200 submissions from universities nationwide."
+  },
+  {
+    "slug": "huce-scientific-research-2024",
+    "title": "HUCE Student Scientific Research Award",
+    "prize": "First & Second Prizes",
+    "level": "University",
+    "year": "2024",
+    "icon": "fa-trophy",
+    "description": "Received both First and Second prizes at the HUCE Student Scientific Research Award for outstanding research contributions in AI and cybersecurity.",
+    "details": "Recognized for multiple research projects conducted during the academic year. The First Prize was awarded for our work on federated learning optimization, while the Second Prize recognized our contributions to network traffic classification using transfer learning. This dual recognition highlighted the breadth and depth of our research capabilities."
+  },
+  {
+    "slug": "olympiad-it-32nd",
+    "title": "32nd Vietnam IT Student Olympiad",
+    "prize": "Third Prize (50th place)",
+    "level": "National",
+    "year": "2023",
+    "icon": "fa-code",
+    "description": "Achieved Third Prize (50th place) among hundreds of talented IT students from across Vietnam in the 32nd national IT Olympiad.",
+    "details": "Competed in algorithmic problem solving, data structures, and programming challenges against top IT students from universities nationwide. The competition tested skills in competitive programming, algorithm design, and optimization under time pressure. This result placed me among the top performers in the country."
+  },
+  {
+    "slug": "huce-olympiad-it-2023",
+    "title": "HUCE Olympiad in IT",
+    "prize": "First Prize",
+    "level": "University",
+    "year": "2023",
+    "icon": "fa-laptop-code",
+    "description": "Won First Prize at the Hanoi University of Civil Engineering Olympiad in IT, demonstrating strong programming and algorithmic skills.",
+    "details": "Secured the top position in the university-level IT Olympiad, competing against fellow CS students in algorithmic problem solving and programming challenges. The competition covered topics including graph algorithms, dynamic programming, and data structure optimization."
+  },
+  {
+    "slug": "olympiad-it-31st",
+    "title": "31st Vietnam IT Student Olympiad",
+    "prize": "Consolation Prize (75th place)",
+    "level": "National",
+    "year": "2022",
+    "icon": "fa-code",
+    "description": "Earned Consolation Prize (75th place) at the 31st Vietnam IT Student Olympiad, marking my first participation in a national-level programming competition.",
+    "details": "This was my first experience competing at the national level in the Vietnam IT Student Olympiad. The competition provided valuable exposure to advanced algorithmic problems and helped identify areas for improvement. This experience laid the foundation for better performance in subsequent years."
+  }
+]

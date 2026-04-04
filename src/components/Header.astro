@@ -45,6 +45,15 @@ const navLinks = [
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={lang === 'en' ? '/vi/' : '/'}
+          class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent-900/50 border border-accent-700/30 text-accent-300/70 hover:text-accent-300 hover:border-accent-500/50 transition-all duration-300 text-sm font-medium"
+        >
+          <i class="fas fa-globe text-xs"></i>
+          <span>{lang === 'en' ? 'VI' : 'EN'}</span>
+        </a>
+      </li>
     </ul>
 
     <button id="menu-btn" class="md:hidden text-accent-300/70 hover:text-accent-300 transition-colors">
@@ -67,6 +76,15 @@ const navLinks = [
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={lang === 'en' ? '/vi/' : '/'}
+          class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent-900/50 border border-accent-700/30 text-accent-300/70 hover:text-accent-300 hover:border-accent-500/50 transition-all duration-300 text-sm font-medium"
+        >
+          <i class="fas fa-globe text-xs"></i>
+          <span>{lang === 'en' ? 'VI' : 'EN'}</span>
+        </a>
+      </li>
     </ul>
   </div>
 </header>

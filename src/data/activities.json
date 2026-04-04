@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "sakura-science-club",
+    "title": "Sakura Science Club (Japan)",
+    "role": "Member",
+    "period": "2018 – Present",
+    "icon": "fa-globe-asia",
+    "description": "Active member of an international science club promoting cultural and scientific exchange between Vietnam and Japan.",
+    "details": "As a long-standing member of the Sakura Science Club, I have participated in various cultural exchange programs, scientific workshops, and collaborative projects between Vietnamese and Japanese students. The club focuses on fostering international relationships, sharing knowledge in STEM fields, and promoting understanding between the two cultures. Through this involvement, I have developed cross-cultural communication skills and gained exposure to Japan's advanced research ecosystem."
+  },
+  {
+    "slug": "soict-summer-school",
+    "title": "SOICT Summer School in Generative AI",
+    "role": "Student",
+    "period": "Aug 2024",
+    "icon": "fa-robot",
+    "description": "Intensive 5-day program on Generative AI, covering latest advancements in LLMs, diffusion models, and their applications.",
+    "details": "Participated in an intensive 5-day summer school program organized by SOICT (Symposium on Information and Communication Technology). The program covered cutting-edge topics in Generative AI including Large Language Models (LLMs), diffusion models, transformer architectures, and their practical applications in research and industry. Hands-on sessions included fine-tuning pre-trained models, prompt engineering, and building AI-powered applications. This experience significantly deepened my understanding of generative AI and its potential for cybersecurity applications."
+  }
+]
