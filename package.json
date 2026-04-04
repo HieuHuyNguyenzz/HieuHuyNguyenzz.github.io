@@ -1,16 +1,16 @@
 {
   "name": "hieuhuynguyen.github.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Huy Hieu Nguyen - AI Engineer & Research Assistant Portfolio",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "ai-engineer", "research", "web-development"],
+  "author": "Huy Hieu Nguyen",
   "license": "ISC",
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",

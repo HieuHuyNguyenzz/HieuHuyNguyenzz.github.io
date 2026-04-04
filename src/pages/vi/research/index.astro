@@ -7,12 +7,6 @@ import vi from '../../../i18n/vi.json';
 
 const t = vi;
 
-const statusLabels: Record<string, string> = {
-  published: t.common.published,
-  'under-review': t.common.underReview,
-  'in-progress': t.common.inProgress,
-};
-
 const sectionOrder = ['published', 'under-review', 'in-progress'] as const;
 
 function getCardClasses(isFirstAuthor: boolean): string {
@@ -58,7 +52,7 @@ function getContributionClasses(isFirstAuthor: boolean): string {
 }
 ---
 
-<BaseLayout title={`${t.research.pageTitle} | Nguyễn Huy Hiệu`}>
+<BaseLayout title={`${t.research.pageTitle} | Nguyễn Huy Hiệu`} lang="vi">
   <Header currentPage="research" lang="vi" t={t} />
   <main class="pt-20">
     <section class="py-24 relative">

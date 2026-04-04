@@ -7,12 +7,6 @@ import en from '../../i18n/en.json';
 
 const t = en;
 
-const statusLabels: Record<string, string> = {
-  published: t.common.published,
-  'under-review': t.common.underReview,
-  'in-progress': t.common.inProgress,
-};
-
 const sectionOrder = ['published', 'under-review', 'in-progress'] as const;
 
 function getCardClasses(isFirstAuthor: boolean): string {
@@ -58,7 +52,7 @@ function getContributionClasses(isFirstAuthor: boolean): string {
 }
 ---
 
-<BaseLayout title={`${t.research.pageTitle} | Huy Hieu Nguyen`}>
+<BaseLayout title={`${t.research.pageTitle} | Huy Hieu Nguyen`} lang="en">
   <Header currentPage="research" lang="en" t={t} />
   <main class="pt-20">
     <section class="py-24 relative">

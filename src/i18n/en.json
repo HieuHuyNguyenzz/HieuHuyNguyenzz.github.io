@@ -109,7 +109,16 @@
       "programming": "Programming Languages",
       "frameworks": "Libraries & Frameworks",
       "tools": "Other Skills",
-      "certificates": "Certificates"
+      "certificates": "Certificates",
+      "toolsList": [
+        "Data Structures and Algorithms",
+        "Machine Learning",
+        "Deep Learning",
+        "Data Science"
+      ],
+      "certificatesList": [
+        "IELTS 7.0"
+      ]
     }
   },
   "activities": {

@@ -4,18 +4,32 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  lang?: 'en' | 'vi';
+  image?: string;
 }
 
-const { title, description = 'Huy Hieu Nguyen - AI Engineer & Research Assistant Portfolio' } = Astro.props;
+const { title, description = 'Huy Hieu Nguyen - AI Engineer & Research Assistant Portfolio', lang = 'en', image = '/img/avatar.jpg' } = Astro.props;
+
+const siteUrl = 'https://hieuhuynguyen.github.io';
+const ogImage = new URL(image, siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/img/avatar.jpg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />

@@ -22,7 +22,8 @@ const navLinks = [
 
 <header class="fixed top-0 left-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-dark-border">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href={`${prefix}/`} class="text-xl font-bold relative group">
+    <a href={`${prefix}/`} class="flex items-center gap-3 text-xl font-bold relative group">
+      <img src="/img/logo.png" alt="Logo" class="h-8 w-auto" />
       <span class="bg-gradient-to-r from-accent-300 via-accent-500 to-accent-700 bg-clip-text text-transparent">
         {lang === 'vi' ? 'Hiệu Nguyễn' : 'Hieu Nguyen'}
       </span>

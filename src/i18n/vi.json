@@ -18,6 +18,7 @@
     "viewDetails": "Xem chi tiết",
     "backToResearch": "Quay lại Nghiên cứu",
     "backToProjects": "Quay lại Dự án",
+    "backToActivities": "Quay lại Hoạt động & Giải thưởng",
     "viewPdf": "Xem PDF",
     "viewCode": "Xem Code",
     "sourceCode": "Mã nguồn",
@@ -25,6 +26,8 @@
     "published": "đã công bố",
     "underReview": "đang phản biện",
     "inProgress": "đang thực hiện",
+    "completed": "hoàn thành",
+    "planned": "lên kế hoạch",
     "firstAuthor": "Tác giả chính",
     "researchSections": {
       "published": "Bài báo đã công bố",
@@ -106,7 +109,16 @@
       "programming": "Ngôn ngữ lập trình",
       "frameworks": "Thư viện & Framework",
       "tools": "Kỹ năng khác",
-      "certificates": "Chứng chỉ"
+      "certificates": "Chứng chỉ",
+      "toolsList": [
+        "Cấu trúc dữ liệu & Giải thuật",
+        "Machine Learning",
+        "Deep Learning",
+        "Data Science"
+      ],
+      "certificatesList": [
+        "IELTS 7.0"
+      ]
     }
   },
   "activities": {
