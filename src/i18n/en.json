@@ -40,10 +40,10 @@
     "personalWork": "Personal & open-source work"
   },
   "home": {
-    "greeting": "Hi, I'm",
+    "greeting": "Hi, my name is",
     "badge": "AI Engineer & Research Assistant",
-    "bio": "AI Engineer at Viettel Cyber Security & Research Assistant at AINI Lab, BK Cyber Security Center, SOICT.",
-    "bioSecondary": "My core strengths lie in Federated Learning, Deep Learning for network security, and LLM-based AI systems. I aim to become a leading AI researcher bridging academic innovation with enterprise-level cybersecurity solutions. Currently, my research focuses on privacy-preserving machine learning and efficient training strategies for distributed systems."
+    "bio": "AI Engineer at Viettel Cyber Security & Research Assistant at AI Network Innovation lab.",
+    "bioSecondary": "My research interests include AI and Deep Learning in general, espeacially algorithmic based topic. "
   },
   "about": {
     "pageTitle": "About",

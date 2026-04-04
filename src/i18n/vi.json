@@ -40,10 +40,10 @@
     "personalWork": "Dự án cá nhân & mã nguồn mở"
   },
   "home": {
-    "greeting": "Xin chào, tôi là",
+    "greeting": "Xin chào, tên tôi là",
     "badge": "Kỹ sư AI & Trợ lý Nghiên cứu",
-    "bio": "Kỹ sư AI tại Viettel Cyber Security & Trợ lý Nghiên cứu tại AINI Lab, Trung tâm An ninh mạng BK, SOICT.",
-    "bioSecondary": "Thế mạnh của tôi nằm ở Federated Learning, Deep Learning cho an ninh mạng và hệ thống AI dựa trên LLM. Mục tiêu nghề nghiệp là trở thành nhà nghiên cứu AI hàng đầu, kết nối đổi mới học thuật với giải pháp an ninh mạng doanh nghiệp. Hướng nghiên cứu hiện tại tập trung vào học máy bảo vệ quyền riêng tư và chiến lược huấn luyện hiệu quả cho hệ thống phân tán."
+    "bio": "Kỹ sư AI tại Viettel Cyber Security & Trợ lý Nghiên cứu tại AI Network Innovation lab.",
+    "bioSecondary": "Tôi quan tâm đến các hướng nghiên cứu liên quan đền AI và Deep Learning nói chung, đặc biệt là các bài toán có thiên hướng thuật toán."
   },
   "about": {
     "pageTitle": "Giới thiệu",
