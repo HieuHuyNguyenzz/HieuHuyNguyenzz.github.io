@@ -63,6 +63,12 @@ const statusColors: Record<string, string> = {
             </div>
           </div>
 
+          {research.image && (
+            <div class="mb-8 rounded-xl overflow-hidden border border-dark-border">
+              <img src={research.image} alt={research.title} class="w-full h-auto object-cover" />
+            </div>
+          )}
+
           <div class="mb-8">
             <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
               <i class="fas fa-file-alt text-accent-400 text-sm"></i> {t.research.sections.abstract}
@@ -84,6 +90,28 @@ const statusColors: Record<string, string> = {
               ))}
             </div>
           </div>
+
+          {research.context && (
+            <div class="mb-8">
+              <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+                <i class="fas fa-info-circle text-accent-400 text-sm"></i> Bối cảnh
+              </h2>
+              <p class="text-accent-300/60 leading-relaxed">
+                {research.context}
+              </p>
+            </div>
+          )}
+
+          {research.myComments && (
+            <div class="mb-8 p-6 bg-accent-900/20 rounded-xl border border-accent-700/30">
+              <h2 class="text-lg font-semibold text-accent-200 mb-3 flex items-center gap-2">
+                <i class="fas fa-comment-dots text-accent-400 text-sm"></i> Suy nghĩ của tôi
+              </h2>
+              <p class="text-accent-300/70 leading-relaxed italic">
+                {research.myComments}
+              </p>
+            </div>
+          )}
 
           <div class="flex flex-wrap gap-4 pt-6 border-t border-dark-border">
             {research.pdfLink && research.pdfLink !== '#' && (

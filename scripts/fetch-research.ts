@@ -23,6 +23,9 @@ interface ResearchItem {
   pdfLink: string;
   codeLink: string;
   status: 'published' | 'under-review' | 'in-progress';
+  image: string;
+  context: string;
+  myComments: string;
 }
 
 function getPropertyValue(page: any, propertyName: string): any {
@@ -44,8 +47,51 @@ function getPropertyValue(page: any, propertyName: string): any {
       return property.number || 0;
     case 'checkbox':
       return property.checkbox || false;
+    case 'files':
+      if (property.files && property.files.length > 0) {
+        const file = property.files[0];
+        if (file.type === 'file') {
+          return file.file.url;
+        } else if (file.type === 'external') {
+          return file.external.url;
+        }
+      }
+      return '';
     default:
       return null;
+  }
+}
+
+async function downloadImage(imageUrl: string, slug: string): Promise<string> {
+  if (!imageUrl) return '';
+
+  try {
+    const imagesDir = path.join(process.cwd(), 'public', 'images', 'research');
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const urlObj = new URL(imageUrl);
+    const pathname = urlObj.pathname;
+    const ext = path.extname(pathname) || '.jpg';
+    const filename = `${slug}-cover${ext}`;
+    const localPath = path.join(imagesDir, filename);
+
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      console.warn(`Failed to download image: ${imageUrl}`);
+      return '';
+    }
+
+    const buffer = await response.arrayBuffer();
+    fs.writeFileSync(localPath, Buffer.from(buffer));
+
+    const relativePath = `/images/research/${filename}`;
+    console.log(`  ✓ Downloaded: ${filename}`);
+    return relativePath;
+  } catch (error) {
+    console.warn(`Error downloading image: ${imageUrl}`, error);
+    return '';
   }
 }
 
@@ -66,13 +112,20 @@ async function fetchResearchData(): Promise<ResearchItem[]> {
       ],
     });
 
-    const researches: ResearchItem[] = response.results.map((page: any) => {
+    const researches: ResearchItem[] = [];
+    
+    for (const page of response.results) {
       const title = getPropertyValue(page, 'Title');
+      if (!title) continue;
+
       const role = getPropertyValue(page, 'Role') || getPropertyValue(page, 'Role (original)');
       const isFirstAuthor = getPropertyValue(page, 'First Author') || role === 'First Author';
+      const slug = getPropertyValue(page, 'Slug') || title.toLowerCase().replace(/\s+/g, '-');
+      const imageUrl = getPropertyValue(page, 'Image') || '';
+      const localImage = await downloadImage(imageUrl, slug);
 
-      return {
-        slug: getPropertyValue(page, 'Slug') || title.toLowerCase().replace(/\s+/g, '-'),
+      researches.push({
+        slug,
         title,
         role,
         isFirstAuthor,
@@ -85,8 +138,11 @@ async function fetchResearchData(): Promise<ResearchItem[]> {
         pdfLink: getPropertyValue(page, 'PDF Link'),
         codeLink: getPropertyValue(page, 'Code Link'),
         status: getPropertyValue(page, 'Status') || 'published',
-      };
-    });
+        image: localImage,
+        context: getPropertyValue(page, 'Context') || '',
+        myComments: getPropertyValue(page, 'My Comments') || '',
+      });
+    }
 
     return researches;
   } catch (error) {
