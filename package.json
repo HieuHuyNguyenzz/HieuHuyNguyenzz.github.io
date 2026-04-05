@@ -8,7 +8,7 @@
     "prebuild": "tsx scripts/fetch-research.ts",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist -r https://github.com/HieuHuyNguyenzz/HieuHuyNguyenzz.github.io.git -t"
   },
   "keywords": [
     "portfolio",
