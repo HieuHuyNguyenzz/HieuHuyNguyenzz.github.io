@@ -5,16 +5,27 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "tsx scripts/fetch-research.ts",
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "keywords": ["portfolio", "ai-engineer", "research", "web-development"],
+  "keywords": [
+    "portfolio",
+    "ai-engineer",
+    "research",
+    "web-development"
+  ],
   "author": "Huy Hieu Nguyen",
   "license": "ISC",
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
+    "@notionhq/client": "^2.3.0",
     "astro": "^5.0.0",
+    "dotenv": "^17.4.0",
     "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
   }
 }
