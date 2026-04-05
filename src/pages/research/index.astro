@@ -7,6 +7,9 @@ import en from '../../i18n/en.json';
 
 const t = en;
 
+const allKeywords = [...new Set(researches.flatMap(r => r.keywords || []))].sort();
+const sortedResearches = [...researches].sort((a, b) => b.year - a.year);
+
 const sectionOrder = ['published', 'under-review', 'in-progress'] as const;
 
 function getCardClasses(isFirstAuthor: boolean): string {
@@ -71,20 +74,30 @@ function getContributionClasses(isFirstAuthor: boolean): string {
           </p>
         </div>
 
-        {sectionOrder.map((section) => {
-          const papers = researches.filter(r => r.status === section);
-          if (papers.length === 0) return null;
+        <div class="mb-8">
+          <div class="flex flex-wrap gap-2" id="keyword-filters">
+            <button class="filter-btn active px-3 py-1.5 text-xs rounded-full bg-accent-500/20 text-accent-400 border border-accent-500/40 font-medium transition-all" data-filter="all">
+              All
+            </button>
+            {allKeywords.map(keyword => (
+              <button class="filter-btn px-3 py-1.5 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30 hover:border-accent-500/50 transition-all" data-filter={keyword}>
+                {keyword}
+              </button>
+            ))}
+          </div>
+        </div>
 
-          return (
-            <div class="mb-12 last:mb-0">
-              <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
-                <span class="w-8 h-px bg-accent-500/50"></span>
-                {t.common.researchSections[section]}
-                <span class="text-sm font-normal text-accent-300/40">({papers.length})</span>
-              </h2>
+        <div id="research-list" class="space-y-12">
+          {sortedResearches.map(r => (
+            <div class="research-card" data-keywords={JSON.stringify(r.keywords || [])} data-year={r.year}>
+              <div class="mb-8">
+                <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
+                  <span class="w-8 h-px bg-accent-500/50"></span>
+                  {r.title}
+                  <span class="text-sm font-normal text-accent-300/40">({r.year})</span>
+                </h2>
 
-              <div class="space-y-4">
-                {papers.map((r) => (
+                <div class="space-y-4">
                   <div class={`group relative bg-dark-card border rounded-2xl p-6 transition-all duration-500 overflow-hidden ${getCardClasses(r.isFirstAuthor)}`}>
                     <div class={`absolute top-0 left-0 w-full h-px transition-all duration-500 ${getTopLineClasses(r.isFirstAuthor)}`}></div>
 
@@ -111,6 +124,14 @@ function getContributionClasses(isFirstAuthor: boolean): string {
                       </span>
                     </div>
 
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      {(r.keywords || []).map(keyword => (
+                        <span class="px-2 py-0.5 text-xs rounded-full bg-accent-900/40 text-accent-400/70 border border-accent-700/20">
+                          {keyword}
+                        </span>
+                      ))}
+                    </div>
+
                     <p class={`text-sm leading-relaxed mb-4 ${getContributionClasses(r.isFirstAuthor)}`}>
                       {r.contribution}
                     </p>
@@ -131,13 +152,53 @@ function getContributionClasses(isFirstAuthor: boolean): string {
                       )}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
+
+        <div id="no-results" class="hidden text-center py-12">
+          <p class="text-accent-300/50">No research papers found for this filter.</p>
+        </div>
       </div>
     </section>
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const researchCards = document.querySelectorAll('.research-card');
+  const noResults = document.getElementById('no-results');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-accent-500/20', 'text-accent-400', 'border-accent-500/40');
+        b.classList.add('bg-accent-900/60', 'text-accent-400', 'border-accent-700/30');
+      });
+      btn.classList.add('active', 'bg-accent-500/20', 'text-accent-400', 'border-accent-500/40');
+      btn.classList.remove('bg-accent-900/60', 'border-accent-700/30');
+
+      let visibleCount = 0;
+
+      researchCards.forEach(card => {
+        const keywords = JSON.parse(card.getAttribute('data-keywords') || '[]');
+        
+        if (filter === 'all' || keywords.includes(filter)) {
+          (card as HTMLElement).style.display = 'block';
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        noResults.classList.toggle('hidden', visibleCount > 0);
+      }
+    });
+  });
+</script>
