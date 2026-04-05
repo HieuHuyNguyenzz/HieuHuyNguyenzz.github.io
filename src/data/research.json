@@ -18,5 +18,23 @@
     "image": "/images/research/33-cover.jpg",
     "context": "rewrerer",
     "myComments": "rưererwer"
+  },
+  {
+    "slug": "2",
+    "title": "2",
+    "role": null,
+    "isFirstAuthor": false,
+    "venue": "",
+    "year": 2,
+    "contribution": "",
+    "authors": "",
+    "abstract": "",
+    "keywords": [],
+    "pdfLink": "",
+    "codeLink": "",
+    "status": "published",
+    "image": "",
+    "context": "",
+    "myComments": ""
   }
 ]
