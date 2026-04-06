@@ -4,3 +4,5 @@ dist
 .DS_Store
 *.log
 .env
+src/data/*.json
+src/data/blog-content/
