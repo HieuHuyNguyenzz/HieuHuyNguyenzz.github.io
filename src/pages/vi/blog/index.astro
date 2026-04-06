@@ -2,12 +2,16 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
+import BlogAuth from '../../../components/BlogAuth.astro';
+import blog from '../../../data/blog.json';
 import vi from '../../../i18n/vi.json';
 
 const t = vi as any;
+const sortedBlog = [...blog].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
-<BaseLayout title={`${t.blog.pageTitle} | Nguyễn Huy Hiệu`} lang="vi">
+<BaseLayout title={`${t.blog.pageTitle} | Nguyễn Huy Hiệu`} description={t.blog.pageDesc || 'Suy nghĩ, hướng dẫn và chia sẻ về AI, phát triển phần mềm và nhiều hơn nữa.'} lang="vi">
+  <BlogAuth />
   <Header currentPage="blog" lang="vi" t={t} />
   <main class="pt-20">
     <section class="py-24 relative">
@@ -21,11 +25,60 @@ const t = vi as any;
           <h1 class="text-3xl md:text-4xl font-bold">
             {t.blog.pageTitle}
           </h1>
+          <p class="text-accent-300/50 mt-4 max-w-lg mx-auto">
+            {t.blog.pageDesc || 'Suy nghĩ, hướng dẫn và chia sẻ về AI, phát triển phần mềm và nhiều hơn nữa.'}
+          </p>
         </div>
 
-        <div class="text-center py-20">
-          <p class="text-accent-300/60 text-lg">Sắp ra mắt...</p>
-        </div>
+        {sortedBlog.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {sortedBlog.map((post) => (
+              <a href={`/vi/blog/${post.slug}`} class="group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden hover:border-accent-500/40 transition-all duration-500">
+                <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-400/60 via-accent-500/40 to-transparent group-hover:from-accent-300/80 group-hover:via-accent-400/60 transition-all duration-500"></div>
+                
+                {post.cover ? (
+                  <div class="h-48 overflow-hidden">
+                    <img src={post.cover} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                ) : (
+                  <div class="h-48 bg-accent-900/30 flex items-center justify-center">
+                    <i class="fas fa-blog text-accent-400 text-4xl"></i>
+                  </div>
+                )}
+                
+                <div class="p-6">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="px-2 py-0.5 text-xs rounded-full bg-accent-500/20 text-accent-400 border border-accent-500/30">
+                      {post.category}
+                    </span>
+                    <span class="text-accent-300/40 text-xs">
+                      {post.date}
+                    </span>
+                  </div>
+                  
+                  <h3 class="text-lg font-semibold text-accent-200 group-hover:text-accent-300 transition-colors duration-300 mb-2">
+                    {post.title}
+                  </h3>
+                  
+                  {post.excerpt && (
+                    <p class="text-accent-300/50 text-sm line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  )}
+                  
+                  <div class="mt-4 flex items-center gap-2 text-sm text-accent-400 group-hover:text-accent-300 transition-colors">
+                    Đọc thêm <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-300"></i>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-20">
+            <p class="text-accent-300/60 text-lg">Chưa có bài viết nào.</p>
+            <p class="text-accent-300/40 text-sm mt-2">Hãy quay lại sau!</p>
+          </div>
+        )}
       </div>
     </section>
   </main>

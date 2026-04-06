@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import awards from '../../../data/awards.json';
 import activities from '../../../data/activities.json';
 import en from '../../../i18n/en.json';
+import type { AwardItem, ActivityItem } from '../../../lib/notion';
 
 const t = en;
 
@@ -16,6 +17,14 @@ export function getStaticPaths() {
 }
 
 const { item } = Astro.props;
+const isAward = 'prize' in item;
+const award = isAward ? (item as AwardItem) : null;
+const activity = !isAward ? (item as ActivityItem) : null;
+
+interface ItemWithGallery {
+  gallery?: string[];
+}
+const itemWithGallery = item as ItemWithGallery;
 ---
 
 <BaseLayout title={`${item.title} | Huy Hieu Nguyen`} lang="en">
@@ -33,8 +42,8 @@ const { item } = Astro.props;
           <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
 
           <div class="flex items-center gap-3 mb-4">
-            <span class="px-2 py-0.5 text-xs rounded-full bg-accent-900/40 text-accent-300/50 border border-accent-700/20">{item.level || item.period}</span>
-            <span class="text-accent-300/30 text-sm">{item.year || ''}</span>
+            <span class="px-2 py-0.5 text-xs rounded-full bg-accent-900/40 text-accent-300/50 border border-accent-700/20">{award ? award.level : activity!.period}</span>
+            <span class="text-accent-300/30 text-sm">{award ? award.year : ''}</span>
           </div>
 
           <div class="flex items-center gap-4 mb-6">
@@ -45,7 +54,7 @@ const { item } = Astro.props;
               <h1 class="text-2xl md:text-3xl font-bold text-accent-200">
                 {item.title}
               </h1>
-              <p class="text-accent-400 text-lg mt-1">{item.prize || item.role}</p>
+              <p class="text-accent-400 text-lg mt-1">{award ? award.prize : activity!.role}</p>
             </div>
           </div>
 
@@ -66,6 +75,21 @@ const { item } = Astro.props;
               {item.details}
             </p>
           </div>
+
+          {itemWithGallery.gallery && itemWithGallery.gallery.length > 0 && (
+            <div class="mb-8">
+              <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
+                <i class="fas fa-images text-accent-400 text-sm"></i> Gallery
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {itemWithGallery.gallery.map((img) => (
+                  <div class="rounded-lg overflow-hidden border border-dark-border">
+                    <img src={img} alt={item.title} class="w-full h-48 object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

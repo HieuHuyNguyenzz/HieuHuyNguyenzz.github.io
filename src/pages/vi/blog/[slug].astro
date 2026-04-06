@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogAuth from '../../../components/BlogAuth.astro';
+import blog from '../../../data/blog.json';
+import vi from '../../../i18n/vi.json';
+
+export function getStaticPaths() {
+  return blog.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const t = vi as any;
+
+let content: any[] = [];
+try {
+  const contentModule = await import(`../../../data/blog-content/${post.slug}.json`);
+  content = contentModule.default;
+} catch (e) {
+  content = [];
+}
+---
+
+<BaseLayout title={`${post.title} | Nguyễn Huy Hiệu`} description={post.excerpt} lang="vi">
+  <BlogAuth />
+  <Header currentPage="blog" lang="vi" t={t} />
+  <main class="pt-20">
+    <section class="py-24 relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-700/8 via-accent-900/3 to-transparent"></div>
+
+      <div class="max-w-3xl mx-auto px-6 relative z-10">
+        <a href="/vi/blog" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors mb-8 text-sm">
+          <i class="fas fa-arrow-left text-xs"></i> Quay lại Blog
+        </a>
+
+        <article class="bg-dark-card border border-dark-border rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-accent-500/60 via-accent-700/40 to-transparent"></div>
+
+          <div class="mb-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="px-2 py-0.5 text-xs rounded-full bg-accent-500/20 text-accent-400 border border-accent-500/30">
+                {post.category}
+              </span>
+              <span class="text-accent-300/40 text-xs">{post.date}</span>
+            </div>
+            
+            <h1 class="text-2xl md:text-3xl font-bold text-accent-200">
+              {post.title}
+            </h1>
+          </div>
+
+          {post.cover && (
+            <div class="mb-8 rounded-xl overflow-hidden border border-dark-border">
+              <img src={post.cover} alt={post.title} class="w-full h-auto object-cover" />
+            </div>
+          )}
+
+          <div class="prose prose-invert max-w-none">
+            {content.map((block: any) => {
+              switch (block.type) {
+                case 'paragraph':
+                  return <p class="text-accent-300/70 leading-relaxed mb-4">{block.content}</p>;
+                case 'heading_1':
+                  return <h1 class="text-2xl font-bold text-accent-200 mt-8 mb-4">{block.content}</h1>;
+                case 'heading_2':
+                  return <h2 class="text-xl font-semibold text-accent-200 mt-6 mb-3">{block.content}</h2>;
+                case 'heading_3':
+                  return <h3 class="text-lg font-medium text-accent-200 mt-4 mb-2">{block.content}</h3>;
+                case 'bulleted_list_item':
+                  return <li class="text-accent-300/70 ml-4 mb-1 list-disc">{block.content}</li>;
+                case 'numbered_list_item':
+                  return <li class="text-accent-300/70 ml-4 mb-1 list-decimal">{block.content}</li>;
+                case 'quote':
+                  return <blockquote class="border-l-4 border-accent-500 pl-4 italic text-accent-300/60 my-4">{block.content}</blockquote>;
+                case 'code':
+                  return <pre class="bg-accent-900/50 rounded-lg p-4 overflow-x-auto my-4"><code class="text-sm text-accent-300">{block.content}</code></pre>;
+                case 'image':
+                  return (
+                    <figure class="my-6">
+                      <img src={block.url} alt={block.caption} class="w-full rounded-lg" />
+                      {block.caption && <figcaption class="text-accent-400 text-sm mt-2 text-center">{block.caption}</figcaption>}
+                    </figure>
+                  );
+                case 'divider':
+                  return <hr class="border-dark-border my-8" />;
+                default:
+                  return null;
+              }
+            })}
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

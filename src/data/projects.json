@@ -1,92 +1,23 @@
 [
   {
-    "slug": "project-1",
-    "title": "Project Name 1",
-    "shortDesc": "Brief one-line summary for the listing card.",
-    "problem": "Describe the real-world problem or pain point this project addresses.",
-    "solution": "Explain your approach and architecture decisions.",
-    "techStack": ["Python", "TensorFlow", "React"],
-    "results": [
-      "Achieved 95% accuracy on test dataset",
-      "Reduced processing time by 40% compared to baseline",
-      "Deployed and serving 100+ requests per day"
+    "slug": "a",
+    "title": "a",
+    "shortDesc": "a",
+    "problem": "a",
+    "solution": "a",
+    "techStack": [
+      "Python"
     ],
-    "screenshots": [],
-    "githubLink": "#",
-    "demoLink": "#",
-    "date": "2024-06",
-    "status": "completed"
-  },
-  {
-    "slug": "project-2",
-    "title": "Project Name 2",
-    "shortDesc": "Brief one-line summary for the listing card.",
-    "problem": "Describe the real-world problem or pain point this project addresses.",
-    "solution": "Explain your approach and architecture decisions.",
-    "techStack": ["Node.js", "Docker", "PostgreSQL"],
     "results": [
-      "Handled 1000+ concurrent users",
-      "99.9% uptime over 6 months",
-      "Reduced API response time to under 200ms"
+      "Paper"
     ],
-    "screenshots": [],
-    "githubLink": "#",
-    "demoLink": "#",
-    "date": "2024-03",
-    "status": "completed"
-  },
-  {
-    "slug": "project-3",
-    "title": "Project Name 3",
-    "shortDesc": "Brief one-line summary for the listing card.",
-    "problem": "Describe the real-world problem or pain point this project addresses.",
-    "solution": "Explain your approach and architecture decisions.",
-    "techStack": ["TypeScript", "Next.js", "Tailwind"],
-    "results": [
-      "Lighthouse performance score: 98/100",
-      "First contentful paint under 1s",
-      "SEO ranking improved by 60%"
+    "screenshots": [
+      "https://prod-files-secure.s3.us-west-2.amazonaws.com/b49ba5f7-e800-4ae7-a1fd-8f537cc6f6fa/261a5020-0512-4cef-9afe-e1e340292ec4/014817.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466X6UDUSUV%2F20260406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260406T152507Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAcaCXVzLXdlc3QtMiJHMEUCIC1f5k2OMsjPKFcmuintwXTUaTTEEbys3Fn87VxT25jEAiEAhHab2%2BO3F9s6n4EMXBXbSfaDydaLVcBZn547YvQGUTYqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCzsa6MtNtJph2QS8CrcA5ug7v%2Fuw8ofxuXlAf8Nq1yJXosoFiR5Wj6AP435U2iBcEQPIeQvqlthlaiDFJ5BryGLcbMEMXQCj7pwdY4hI9lafkUR3s%2FGj0wiLLyzkwi%2B%2FeHSIRcTCWzOm7eF6MwPfyph2vWzVvsdEO1YuPwWTRSmPmrqCgoKhSbYFovqAfztNo0R6tEW%2BXQy3zpqHdqyQg%2BskohtzukMVgWTKPyTe8DOFB%2FMKly7S2hVh266Av%2F35fmHxLpQhRFssrR8%2BnS23kh2Bt2yRP4SaLjynorD04i9npg8RLrpDxP0%2FvIlIRS2vJiCZWIOabHS%2F6vOrYvj7KoNZbdBUXA1Fic7zTkOoB%2Bratck0ViMm0cEUVMFysnitLVBx6WrKqQSxBKxyg7tZDGHt5FSg6UhRNJZiviZ97jogPhAhcVAyW7SXVWMFtG%2FL5dDknB2%2FeVXWoo971KSKM%2FKuNJZPj4yMG7Pgwvkuv5nja8YmjZmrwUEIVWR0er6sAC5jOIFgiIOWFLzkUDYuA5smn061OHY3SogFlhp8Fm7ltdDCWYyKbQOW1zOf7x7c4nEQnqKAv0BUp21%2FgoC%2F8GyujMkUbkkC0dJ3M5FjTUVMcQzpsBJej97%2Fh1Q4wEbGafTTWsM8OO1Vz%2FqMMKbz84GOqUB5ODpz9kZl%2Fz6Ipfptdx6hrgPjv%2F4JmB%2FZXYGk4Ur7Etl39%2Bkc%2B2XqUP1Uwc4hMbwKifW%2Fos0%2FScfvsZC%2FUlMcY%2BrGdQCa77fnMMpHHi5HpgWHOrnM1jnfMAuPBsFpsrcdZR9lQmMvSyGqaG46Az9t%2B24OKsIPo3yfM%2BGqXWI%2B0u8l5BAsKPJC1hn%2BO1hCP5NW2CEfplzP%2BiMSulAbwkcfadEi0Tw&X-Amz-Signature=f111bdca95a62ad8f46afc1954897085a0e75e3c44278029274c30462e8ce7eb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
     ],
-    "screenshots": [],
-    "githubLink": "#",
-    "demoLink": "#",
-    "date": "2024-01",
-    "status": "completed"
-  },
-  {
-    "slug": "project-4",
-    "title": "Project Name 4",
-    "shortDesc": "Brief one-line summary for the listing card.",
-    "problem": "Describe the real-world problem or pain point this project addresses.",
-    "solution": "Explain your approach and architecture decisions.",
-    "techStack": ["Python", "FastAPI", "MongoDB"],
-    "results": [
-      "Processed 10K+ records per batch",
-      "Automated workflow saving 5 hours/week",
-      "Integrated with 3 external APIs"
-    ],
-    "screenshots": [],
-    "githubLink": "#",
-    "demoLink": "#",
-    "date": "2023-11",
-    "status": "in-progress"
-  },
-  {
-    "slug": "project-5",
-    "title": "Project Name 5",
-    "shortDesc": "Brief one-line summary for the listing card.",
-    "problem": "Describe the real-world problem or pain point this project addresses.",
-    "solution": "Explain your approach and architecture decisions.",
-    "techStack": ["Rust", "WebAssembly", "React"],
-    "results": [
-      "10x faster than JavaScript equivalent",
-      "Bundle size reduced by 70%",
-      "Zero runtime errors in production"
-    ],
-    "screenshots": [],
-    "githubLink": "#",
-    "demoLink": "#",
-    "date": "2025-01",
-    "status": "planned"
+    "githubLink": "add",
+    "demoLink": "a",
+    "date": "2026-04-07",
+    "status": "Idea",
+    "image": ""
   }
 ]

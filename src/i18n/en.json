@@ -162,7 +162,8 @@
   },
   "blog": {
     "pageTitle": "Blog",
-    "pageSubtitle": "Notes & Sharing"
+    "pageSubtitle": "Notes & Sharing",
+    "pageDesc": "Thoughts, tutorials, and insights on AI, development, and more."
   },
   "research": {
     "pageTitle": "Research",
