@@ -1,5 +1,5 @@
 ---
-const { correctPassword = 'blog2024' } = Astro.props;
+const { correctPassword = '02032002' } = Astro.props;
 ---
 
 <div id="blog-auth-overlay" class="fixed inset-0 z-40 flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -38,13 +38,22 @@ const { correctPassword = 'blog2024' } = Astro.props;
 
 <script define:vars={{ correctPassword }}>
   const AUTH_KEY = 'blog_authenticated';
+  const EXPIRATION_TIME = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
   const overlay = document.getElementById('blog-auth-overlay');
   const form = document.getElementById('blog-auth-form');
   const input = document.getElementById('blog-password');
   const errorMsg = document.getElementById('blog-auth-error');
   
   function checkAuth() {
-    return localStorage.getItem(AUTH_KEY) === 'true';
+    const savedTime = localStorage.getItem(AUTH_KEY);
+    if (!savedTime) return false;
+    
+    const timeDiff = Date.now() - parseInt(savedTime, 10);
+    if (isNaN(timeDiff) || timeDiff > EXPIRATION_TIME) {
+      localStorage.removeItem(AUTH_KEY);
+      return false;
+    }
+    return true;
   }
   
   function showOverlay() {
@@ -54,7 +63,7 @@ const { correctPassword = 'blog2024' } = Astro.props;
   
   function hideOverlay() {
     overlay.style.display = 'none';
-    localStorage.setItem(AUTH_KEY, 'true');
+    localStorage.setItem(AUTH_KEY, Date.now().toString());
   }
   
   function showError() {

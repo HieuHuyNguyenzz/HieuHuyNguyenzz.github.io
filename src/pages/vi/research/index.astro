@@ -74,29 +74,41 @@ function getContributionClasses(isFirstAuthor: boolean): string {
           </p>
         </div>
 
-        <div class="mb-8">
-          <div class="flex flex-wrap gap-2" id="keyword-filters">
-            <button class="filter-btn active px-3 py-1.5 text-xs rounded-full bg-accent-500/20 text-accent-400 border border-accent-500/40 font-medium transition-all" data-filter="all">
-              Tất cả
-            </button>
+        <div class="mb-8 flex flex-wrap justify-center gap-4">
+          <select 
+            id="keyword-filter-select" 
+            class="bg-dark-card border border-dark-border text-accent-400 text-sm rounded-lg focus:ring-accent-500 focus:border-accent-500 block p-2.5 outline-none transition-all cursor-pointer hover:border-accent-500/50"
+          >
+            <option value="all">Tất cả từ khóa</option>
             {allKeywords.map(keyword => (
-              <button class="filter-btn px-3 py-1.5 text-xs rounded-full bg-accent-900/60 text-accent-400 border border-accent-700/30 hover:border-accent-500/50 transition-all" data-filter={keyword}>
-                {keyword}
-              </button>
+              <option value={keyword}>{keyword}</option>
             ))}
-          </div>
+          </select>
+
+          <select 
+            id="role-filter-select" 
+            class="bg-dark-card border border-dark-border text-accent-400 text-sm rounded-lg focus:ring-accent-500 focus:border-accent-500 block p-2.5 outline-none transition-all cursor-pointer hover:border-accent-500/50"
+          >
+            <option value="all">Tất cả vai trò</option>
+            <option value="first">Tác giả chính</option>
+            <option value="co">Đồng tác giả</option>
+          </select>
+
+          <select 
+            id="status-filter-select" 
+            class="bg-dark-card border border-dark-border text-accent-400 text-sm rounded-lg focus:ring-accent-500 focus:border-accent-500 block p-2.5 outline-none transition-all cursor-pointer hover:border-accent-500/50"
+          >
+            <option value="all">Tất cả trạng thái</option>
+            <option value="published">Đã công bố</option>
+            <option value="under-review">Đang phản biện</option>
+            <option value="in-progress">Đang thực hiện</option>
+          </select>
         </div>
 
         <div id="research-list" class="space-y-12">
           {sortedResearches.map(r => (
-            <div class="research-card" data-keywords={JSON.stringify(r.keywords || [])} data-year={r.year}>
+            <div class="research-card" data-keywords={JSON.stringify(r.keywords || [])} data-year={r.year} data-is-first-author={r.isFirstAuthor} data-status={r.status}>
               <div class="mb-8">
-                <h2 class="text-xl font-semibold text-accent-200 mb-6 flex items-center gap-3">
-                  <span class="w-8 h-px bg-accent-500/50"></span>
-                  {r.title}
-                  <span class="text-sm font-normal text-accent-300/40">({r.year})</span>
-                </h2>
-
                 <div class="space-y-4">
                   <div class={`group relative bg-dark-card border rounded-2xl p-6 transition-all duration-500 overflow-hidden ${getCardClasses(r.isFirstAuthor)}`}>
                     <div class={`absolute top-0 left-0 w-full h-px transition-all duration-500 ${getTopLineClasses(r.isFirstAuthor)}`}></div>
@@ -168,37 +180,44 @@ function getContributionClasses(isFirstAuthor: boolean): string {
 </BaseLayout>
 
 <script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const keywordSelect = document.getElementById('keyword-filter-select') as HTMLSelectElement;
+  const roleSelect = document.getElementById('role-filter-select') as HTMLSelectElement;
+  const statusSelect = document.getElementById('status-filter-select') as HTMLSelectElement;
   const researchCards = document.querySelectorAll('.research-card');
   const noResults = document.getElementById('no-results');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+  function updateFilters() {
+    const keyword = (keywordSelect as HTMLSelectElement)?.value || 'all';
+    const role = (roleSelect as HTMLSelectElement)?.value || 'all';
+    const status = (statusSelect as HTMLSelectElement)?.value || 'all';
+    
+    let visibleCount = 0;
+
+    researchCards.forEach(card => {
+      const keywords = JSON.parse(card.getAttribute('data-keywords') || '[]');
+      const isFirstAuthor = card.getAttribute('data-is-first-author') === 'true';
+      const paperStatus = card.getAttribute('data-status');
       
-      filterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-accent-500/20', 'text-accent-400', 'border-accent-500/40');
-        b.classList.add('bg-accent-900/60', 'text-accent-400', 'border-accent-700/30');
-      });
-      btn.classList.add('active', 'bg-accent-500/20', 'text-accent-400', 'border-accent-500/40');
-      btn.classList.remove('bg-accent-900/60', 'border-accent-700/30');
-
-      let visibleCount = 0;
-
-      researchCards.forEach(card => {
-        const keywords = JSON.parse(card.getAttribute('data-keywords') || '[]');
-        
-        if (filter === 'all' || keywords.includes(filter)) {
-          (card as HTMLElement).style.display = 'block';
-          visibleCount++;
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
-
-      if (noResults) {
-        noResults.classList.toggle('hidden', visibleCount > 0);
+      const matchKeyword = keyword === 'all' || keywords.includes(keyword);
+      const matchRole = role === 'all' || 
+                       (role === 'first' && isFirstAuthor) || 
+                       (role === 'co' && !isFirstAuthor);
+      const matchStatus = status === 'all' || paperStatus === status;
+      
+      if (matchKeyword && matchRole && matchStatus) {
+        (card as HTMLElement).style.display = 'block';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
       }
     });
-  });
+
+    if (noResults) {
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+  }
+
+  keywordSelect?.addEventListener('change', updateFilters);
+  roleSelect?.addEventListener('change', updateFilters);
+  statusSelect?.addEventListener('change', updateFilters);
 </script>
