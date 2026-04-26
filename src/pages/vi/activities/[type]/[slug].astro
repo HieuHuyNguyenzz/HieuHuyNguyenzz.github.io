@@ -75,18 +75,61 @@ const itemWithGallery = item as ItemWithGallery;
               <h2 class="text-lg font-semibold text-accent-200 mb-4 flex items-center gap-2">
                 <i class="fas fa-images text-accent-400 text-sm"></i> Thư viện ảnh
               </h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {itemWithGallery.gallery.map((img) => (
-                  <div class="rounded-lg overflow-hidden border border-dark-border">
-                    <img src={img} alt={item.title} class="w-full h-48 object-cover" />
-                  </div>
-                ))}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {itemWithGallery.gallery.map((img) => (
+                    <div class="rounded-lg overflow-hidden border border-dark-border group cursor-pointer">
+                      <img src={img} alt={item.title} class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105 gallery-img" />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>
   </main>
   <Footer />
 </BaseLayout>
+
+<div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/90 p-4 cursor-zoom-out backdrop-blur-sm transition-all duration-300">
+  <button id="close-modal" class="absolute top-6 right-6 text-white text-4xl hover:text-accent-400 transition-colors">&times;</button>
+  <img id="modal-img" src="" alt="Full size view" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300 scale-95 opacity-0" />
+</div>
+
+<script>
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img') as HTMLImageElement;
+  const closeBtn = document.getElementById('close-modal');
+  const galleryImgs = document.querySelectorAll('.gallery-img');
+
+  galleryImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      const src = (img as HTMLImageElement).src;
+      modalImg.src = src;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      
+      setTimeout(() => {
+        modalImg.classList.remove('scale-95', 'opacity-0');
+        modalImg.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    });
+  });
+
+  const closeModal = () => {
+    modalImg.classList.remove('scale-100', 'opacity-100');
+    modalImg.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 300);
+  };
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
