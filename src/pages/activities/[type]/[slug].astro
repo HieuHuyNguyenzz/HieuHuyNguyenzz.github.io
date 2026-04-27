@@ -88,11 +88,26 @@ const itemWithGallery = item as ItemWithGallery;
               </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {itemWithGallery.gallery.map((file) => (
-                    <div class={`rounded-lg overflow-hidden border border-dark-border group cursor-pointer transition-all duration-300 hover:border-accent-500/50 ${isPdf(file) ? 'h-48 flex items-center justify-center bg-dark-border/30' : ''}`}>
+                    <div class={`rounded-lg overflow-hidden border border-dark-border group relative transition-all duration-300 hover:border-accent-500/50 ${isPdf(file) ? 'h-64 bg-white' : 'h-48'}`}>
                       {isPdf(file) ? (
-                        <a href={file} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-3 text-accent-300 group-hover:text-accent-200 transition-colors w-full h-full justify-center">
-                          <i class="fas fa-file-pdf text-4xl text-accent-400"></i>
-                          <span class="text-sm font-medium">View Certificate (PDF)</span>
+                        <a href={file} target="_blank" rel="noopener noreferrer" class="block w-full h-full relative">
+                          {/* PDF Preview Window */}
+                          <div class="w-full h-full overflow-hidden pointer-events-none scale-150 origin-top">
+                            <iframe 
+                              src={`${file}#toolbar=0&navpanes=0&scrollbar=0`} 
+                              class="w-full h-full border-none"
+                            ></iframe>
+                          </div>
+                          
+                          {/* Overlay for better UX */}
+                          <div class="absolute inset-0 bg-dark-card/40 backdrop-blur-[1px] group-hover:bg-dark-card/20 transition-all duration-300 flex flex-col items-center justify-center gap-3">
+                            <div class="p-3 rounded-full bg-accent-500/20 text-accent-400 border border-accent-500/40 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                              <i class="fas fa-external-link-alt text-xl"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-accent-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-dark-card/80 px-3 py-1 rounded-full border border-dark-border">
+                              View Full Certificate
+                            </span>
+                          </div>
                         </a>
                       ) : (
                         <img src={file} alt={item.title} class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105 gallery-img" />
