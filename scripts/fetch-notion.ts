@@ -160,7 +160,7 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, '') || 'untitled';
 }
 
-async function downloadImage(imageUrl: string, slug: string, subDir: string): Promise<string> {
+async function downloadImage(imageUrl: string, slug: string, subDir: string, suffix: string = 'cover'): Promise<string> {
   if (!imageUrl) return '';
 
   try {
@@ -172,7 +172,7 @@ async function downloadImage(imageUrl: string, slug: string, subDir: string): Pr
     const urlObj = new URL(imageUrl);
     const pathname = urlObj.pathname;
     const ext = path.extname(pathname) || '.jpg';
-    const filename = `${slug}-cover${ext}`;
+    const filename = `${slug}-${suffix}${ext}`;
     const localPath = path.join(imagesDir, filename);
 
     const response = await fetch(imageUrl);
@@ -358,19 +358,31 @@ async function fetchActivitiesData(): Promise<ActivityItem[]> {
       sorts: [{ property: 'Period', direction: 'descending' }],
     });
 
-    const activities: ActivityItem[] = results.map((page: any) => {
+    const activities: ActivityItem[] = [];
+    for (const page of results) {
       const title = getPropertyValue(page, 'Title');
-      return {
-        slug: getPropertyValue(page, 'Slug') || slugify(title),
+      if (!title) continue;
+
+      const slug = getPropertyValue(page, 'Slug') || slugify(title);
+      const galleryUrls = getPropertyValue(page, 'Gallery') || [];
+      const localGallery: string[] = [];
+
+      for (let i = 0; i < galleryUrls.length; i++) {
+        const localImg = await downloadImage(galleryUrls[i], slug, 'activities', `img-${i}`);
+        if (localImg) localGallery.push(localImg);
+      }
+
+      activities.push({
+        slug,
         title,
         role: getPropertyValue(page, 'Role') || '',
         period: getPropertyValue(page, 'Period') || '',
         icon: getPropertyValue(page, 'Icon') || 'fa-star',
         description: getPropertyValue(page, 'Description') || '',
         details: getPropertyValue(page, 'Details') || '',
-        gallery: getPropertyValue(page, 'Gallery') || [],
-      };
-    });
+        gallery: localGallery,
+      });
+    }
 
     console.log(`  ✓ Found ${activities.length} activities`);
     return activities;
@@ -392,10 +404,22 @@ async function fetchAwardsData(): Promise<AwardItem[]> {
       sorts: [{ property: 'Year', direction: 'descending' }],
     });
 
-    const awards: AwardItem[] = results.map((page: any) => {
+    const awards: AwardItem[] = [];
+    for (const page of results) {
       const title = getPropertyValue(page, 'Title');
-      return {
-        slug: getPropertyValue(page, 'Slug') || slugify(title),
+      if (!title) continue;
+
+      const slug = getPropertyValue(page, 'Slug') || slugify(title);
+      const galleryUrls = getPropertyValue(page, 'Gallery') || [];
+      const localGallery: string[] = [];
+
+      for (let i = 0; i < galleryUrls.length; i++) {
+        const localImg = await downloadImage(galleryUrls[i], slug, 'awards', `img-${i}`);
+        if (localImg) localGallery.push(localImg);
+      }
+
+      awards.push({
+        slug,
         title,
         prize: getPropertyValue(page, 'Prize') || '',
         level: getPropertyValue(page, 'Level') || '',
@@ -403,9 +427,9 @@ async function fetchAwardsData(): Promise<AwardItem[]> {
         icon: getPropertyValue(page, 'Icon') || 'fa-trophy',
         description: getPropertyValue(page, 'Description') || '',
         details: getPropertyValue(page, 'Details') || '',
-        gallery: getPropertyValue(page, 'Gallery') || [],
-      };
-    });
+        gallery: localGallery,
+      });
+    }
 
     console.log(`  ✓ Found ${awards.length} awards`);
     return awards;
